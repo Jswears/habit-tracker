@@ -12,7 +12,13 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  if (req.session.currentUser) {
+    // User is logged in
+    res.render("index", { isLoggedIn: true });
+  } else {
+    // User is logged out
+    res.render("index", { isLoggedIn: false });
+  }
 });
 
 //GET user profile
@@ -140,7 +146,6 @@ router.get("/account", isLoggedIn, async (req, res, next) => {
     userInSession: req.session.currentUser,
     changes,
   });
-  console.log(changes);
 });
 
 // EDIT Account
