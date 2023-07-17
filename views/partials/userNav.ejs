@@ -1,9 +1,25 @@
-<nav class="userNav">
-  <img src="/images/Trackify.png" alt="Logo">
-  <a href="#">Holaasdasdasd</a>
-  <a href="#">Hola</a>
-  <a href="/account">User Account</a>
-  <form id="logout-form" action="/logout" method="POST">
-    <button>Logout</button>
-  </form>
-</nav>
+<div class="userNav">
+  <nav class="interfaceNav">
+    <img src="/images/Trackify.png" class="user-pic" onclick="toggleMenu()" />
+
+    <div class="sub-menu-wrap" id="subMenu">
+      <div class="sub-menu">
+        <div class="user-info">
+          <img src="/images/Trackify.png" />
+          <h3>User name</h3>
+        </div>
+        <hr />
+
+        <a href="/account" class="sub-menu-link">
+          <img src="/images/userProfile.png" />
+          <p>Edit Profile</p>
+          <span></span>
+        </a>
+        <form action="/logout" method="POST" class="sub-menu-link">
+          <button type="submit"><img src="/images/logout.png" /></button>
+          <span>></span>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -11,7 +11,7 @@ body {
 .homeNav {
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #6699FF, #000000, #6699FF);
+  background: linear-gradient(to right, #6699ff, #000000, #6699ff);
   gap: 20px;
 }
 
@@ -55,11 +55,6 @@ body {
 /* Home Page */
 
 /* Form Sign Up or Register */
-#form {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
 .register {
   text-align: center;
 }
@@ -88,21 +83,6 @@ input {
   padding: 5px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  width: 100%;
-}
-
-button[type="submit"] {
-  padding: 8px 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-button[type="submit"]:hover {
-  background-color: #45a049;
 }
 
 .error {
@@ -114,6 +94,27 @@ button[type="submit"]:hover {
   margin-top: 10px;
 }
 
+#signup {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#signup-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  font-size: 18px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#signup-btn:hover {
+  background-color: #45a049;
+}
 /* Log In Page */
 #login-container {
   height: 100vh;
@@ -160,13 +161,145 @@ button[type="submit"]:hover {
 .bold {
   font-weight: 700;
 }
+
+#login-btn {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#login-btn:hover {
+  background-color: #45a049;
+}
+/* Nav User Iterface */
 /* Nav User Iterface */
 .userNav {
-  background-color: #6f6969;
-  color: #ffffff;
+  width: 100vw;
+  max-width: 100%;
+  background: #eceaff;
+  color: #525252;
+}
+
+.interfaceNav {
+  background: #1a1a1a;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.logo {
+  width: 90px;
+}
+.user-pic {
+  width: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+nav ul {
+  width: 100vw;
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 9.3vh;
+  right: 0vw;
+  width: 320px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 400px;
+}
+
+.sub-menu {
+  background-color: #ccc;
+  padding: 20px;
+  margin: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3 {
+  font-weight: 500;
+}
+
+.user-info img {
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.sub-manu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+
+.sub-menu-link p {
+  width: 100%;
+}
+
+.sub-menu-link button {
+  width: 100%;
+}
+
+.sub-menu-link img {
+  width: 40px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link {
+  font-size: 22px;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+  font-weight: 600;
+}
+
+.sub-menu-link:hover button {
+  font-weight: 600;
 }
 
 .userNav img {
@@ -269,54 +402,73 @@ label {
   font-size: 18px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+#signup input[type="text"],
+#signup input[type="email"],
+#signup input[type="password"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   width: 100%;
+}
+
+/* Habits, daily, todo */
+#add-habit,
+#add-daily,
+#add-todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#add-habit input,
+#add-daily input,
+#add-todo input {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-button {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  font-size: 18px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-/* Habits */
-.habits-container {
+#main-container {
   background-color: #fff;
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
+  gap: 100px;
 }
 
-.habits-card {
-  list-style: none;
-}
-
-.habits-card li {
-  border: 1px solid #000;
-  margin-bottom: 20px;
+.habit-cards,
+.daily-cards,
+.todo-cards {
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  padding: 10px;
+  align-items: baseline;
+  border: 1px solid black;
+  width: 220px;
+  border-radius: 7px;
+  height: 59px;
+  padding: 4px;
 }
+
+.habit-cards button {
+  cursor: pointer;
+}
+
+.hovering {
+  cursor: pointer;
+}
+
+.hovering:hover {
+  background-color: red;
+  border-radius: 7px;
+}
+
+/* Daily */
+
+/* To do */
 
 /* Footer */
 footer {

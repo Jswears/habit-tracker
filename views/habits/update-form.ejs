@@ -1,3 +1,5 @@
+<!-- Foundhabit -->
+<% if (foundHabit) { %>
 <div class="container">
   <h2>Update your habit</h2>
   <form action="/userProfile/<%= foundHabit._id %>/edit" method="post">
@@ -8,3 +10,30 @@
     <button type="submit" class="btn btn-primary">Add Changes!</button>
   </form>
 </div>
+
+<!-- foundDaily -->
+<% } %> <% if (foundDaily) { %>
+<div class="container">
+  <h2>Update your Dailies</h2>
+  <form action="/userProfile/<%= foundDaily._id %>/edit" method="post">
+    <label for="name" class="form-labe"
+      >Daily
+      <input type="text" id="name" name="name" value="<%= foundDaily.name %>" />
+    </label>
+    <button type="submit" class="btn btn-primary">Add Changes!</button>
+  </form>
+</div>
+
+<!-- foundTodo -->
+<% } %> <% if (foundTodo) { %>
+<div class="container">
+  <h2>Update your Todo List</h2>
+  <form action="/userProfile/<%= foundTodo._id %>/edit" method="post">
+    <label for="name" class="form-labe"
+      >Todo
+      <input type="text" id="name" name="name" value="<%= foundTodo.name %>" />
+    </label>
+    <button type="submit" class="btn btn-primary">Add Changes!</button>
+  </form>
+</div>
+<% } %>

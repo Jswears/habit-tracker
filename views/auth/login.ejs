@@ -1,6 +1,6 @@
 <div id="login-container">
   <div id="login-content">
-    <a href="/"><img src="/images/Trackify.png" alt="Logo"></a>
+    <a href="/"><img src="/images/Trackify.png" alt="Logo" /></a>
     <form action="/auth/login" method="POST">
       <label> E-Mail </label>
       <input
@@ -17,7 +17,7 @@
         placeholder="<%= typeof passwordErrorMessage !== 'undefined' ? passwordErrorMessage : ''%>"
       />
 
-      <button type="submit">Login</button>
+      <button type="submit" id="login-btn">Login</button>
     </form>
     <a href="/auth/signup"
       >Don't have a trackify account? <span class="bold">Signup</span></a
