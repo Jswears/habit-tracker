@@ -422,9 +422,13 @@ label {
 } */
 
 /* Daily */
-.container {
-  background: #005da5;
-  height: 100vh;
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.center-align {
+  background-color: aqua;
 }
 
 /* To do */
