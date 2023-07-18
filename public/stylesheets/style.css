@@ -5,6 +5,7 @@ body {
   background-color: #fff;
   box-sizing: border-box;
   font-size: 14px;
+  overflow: hidden;
 }
 
 /* Home Page */
@@ -424,8 +425,9 @@ label {
 
 /* Daily */
 .container {
-  width: 50vw;
+  background: #005da5;
   height: 100vh;
+  width: 50vw;
 }
 
 /* To do */
