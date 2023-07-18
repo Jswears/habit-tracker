@@ -42,6 +42,7 @@ router.get("/userProfile", isLoggedIn, async (req, res, next) => {
   }
 });
 
+
 //GET account
 router.get("/account", isLoggedIn, async (req, res, next) => {
   const currentUser = req.session.currentUser;

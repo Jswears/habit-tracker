@@ -1,61 +1,16 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #fff;
-  box-sizing: border-box;
   font-size: 14px;
-}
-
-/* Nav Home Page */
-.homeNav {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to right, #6699ff, #000000, #6699ff);
-  gap: 20px;
-}
-
-.homeNav img {
-  width: 100px;
-  height: 100px;
-  margin-left: 40px;
-  margin-top: 10px;
-}
-
-.homeNav a {
-  text-decoration: none;
-  color: black;
-  margin-top: 41px;
-  margin-left: 60px;
-}
-
-.homeNav a:hover {
-  text-decoration: underline;
-}
-
-.homeNav #to-right {
-  margin-left: auto;
-  list-style-type: none;
-}
-
-.homeNav #to-right a {
-  background-color: #ff4136;
-  color: #ffffff;
-  margin-right: 10px;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.homeNav #to-right a:hover {
-  background-color: #d30f0d;
-}
+  overflow: hidden;
+} */
 
 /* Home Page */
 
 /* Form Sign Up or Register */
-.register {
+/*.register {
   text-align: center;
 }
 
@@ -116,7 +71,7 @@ input {
   background-color: #45a049;
 }
 /* Log In Page */
-#login-container {
+/*#login-container {
   height: 100vh;
   overflow: hidden;
 }
@@ -175,9 +130,9 @@ input {
 #login-btn:hover {
   background-color: #45a049;
 }
+
 /* Nav User Iterface */
-/* Nav User Iterface */
-.userNav {
+/*.userNav {
   width: 100vw;
   max-width: 100%;
   background: #eceaff;
@@ -339,7 +294,7 @@ nav ul li a {
 /* User Interface */
 
 /* Account */
-.account-container {
+/*.account-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -381,7 +336,7 @@ nav ul li a {
 }
 
 /* Account Update */
-.container {
+/*.container {
   width: 60%;
   margin: 0 auto;
   padding: 20px;
@@ -412,7 +367,7 @@ label {
   width: 100%;
 }
 
-/* Habits, daily, todo */
+/* Habits, daily, todo 
 #add-habit,
 #add-daily,
 #add-todo {
@@ -464,38 +419,35 @@ label {
 .hovering:hover {
   background-color: red;
   border-radius: 7px;
-}
+} */
 
 /* Daily */
+/* .container {
+  background: #005da5;
+  height: 100vh;
+} */
 
 /* To do */
 
-/* Footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.flex-row {
+body {
   display: flex;
-  justify-content: space-between;
-}
-
-.information {
-  flex: 0 0 calc(20% - 10px);
-  margin-bottom: 20px;
-}
-
-footer h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-footer p {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
 }
 
-footer h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+#container {
+  display: flex;
+  align-items: center;
+}
+
+#container .left {
+  flex: 1;
+  text-align: center;
+}
+
+#container .right {
+  flex: 1;
+  padding: 20px;
 }
