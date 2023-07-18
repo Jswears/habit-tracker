@@ -255,6 +255,48 @@ body {
   font-weight: 700;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.habit-section,
+.daily-section,
+.todo-section {
+  width: 459px;
+  height: 869px;
+  margin-top: 184px;
+  background-color: #f5f5f5;
+  border-radius: 24px;
+  margin-right: 24px;
+  padding: 24px;
+}
+
+.card-title {
+  text-align: center;
+  border-bottom: 1px solid #979797;
+  font-size: 20px;
+  color: #1b1c17;
+  font-weight: 700;
+  font-family: Rubik;
+  padding: 8px 10px 30px 10px;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*mobile*/
 @media (max-width: 767px) {
   #login-container .left {
     display: none;
