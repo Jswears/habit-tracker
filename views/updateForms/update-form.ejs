@@ -1,0 +1,24 @@
+<div class="container">
+  <% if (typeof foundHabit !== 'undefined') { %>
+  <h2>Update your habit</h2>
+  <form action="/userProfile/habits/<%= foundHabit._id %>/edit" method="post">
+    <label for="name" class="form-label">Habit</label>
+    <input type="text" id="name" name="name" value="<%= foundHabit.name %>" />
+    <button type="submit" class="btn btn-primary">Update Habit</button>
+  </form>
+  <% } else if (typeof foundDaily !== 'undefined') { %>
+  <h2>Update your Daily</h2>
+  <form action="/userProfile/daily/<%= foundDaily._id %>/edit" method="post">
+    <label for="name" class="form-label">Daily</label>
+    <input type="text" id="name" name="name" value="<%= foundDaily.name %>" />
+    <button type="submit" class="btn btn-primary">Update Daily</button>
+  </form>
+  <% } else if (typeof foundTodo !== 'undefined') { %>
+  <h2>Update your Todo List</h2>
+  <form action="/userProfile/todo/<%= foundTodo._id %>/edit" method="post">
+    <label for="name" class="form-label">Todo</label>
+    <input type="text" id="name" name="name" value="<%= foundTodo.name %>" />
+    <button type="submit" class="btn btn-primary">Update Todo</button>
+  </form>
+  <% } %>
+</div>

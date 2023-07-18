@@ -1,15 +1,20 @@
 <%- include('../partials/userNav') %>
+
 <main>
   <div id="main-container">
     <div id="add-habit">
-      <form action="/userProfile" method="POST">
+      <form action="/userProfile/habits/create" method="POST">
         <label>
           <input type="text" name="name" placeholder="Add a habit" />
         </label>
+        <button type="submit">Add Habit</button>
       </form>
       <% habitList.forEach(habit => { %>
       <div class="habit-cards">
-        <form action="/userProfile/<%= habit._id %>/delete" method="POST">
+        <form
+          action="/userProfile/habits/<%= habit._id %>/delete"
+          method="POST"
+        >
           <button type="submit" class="hovering">
             <img
               src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
@@ -19,7 +24,7 @@
           </button>
         </form>
         <p><%= habit.name %></p>
-        <form action="/userProfile/<%= habit._id %>/edit" method="get">
+        <form action="/userProfile/habits/<%= habit._id %>/edit" method="GET">
           <button type="submit" class="hovering">
             <img
               src="/images/icons8-edit-24.png"
@@ -32,14 +37,15 @@
       <% }) %>
     </div>
     <div id="add-daily">
-      <form action="/userProfile/add-daily" method="POST">
+      <form action="/userProfile/daily/create" method="POST">
         <label>
           <input type="text" name="name" placeholder="Add a Daily" />
         </label>
+        <button type="submit">Add Daily</button>
       </form>
       <% dailyHabits.forEach(daily => { %>
       <div class="daily-cards">
-        <form action="/userProfile/<%= daily._id %>/delete" method="POST">
+        <form action="/userProfile/daily/<%= daily._id %>/delete" method="POST">
           <button type="submit" class="hovering">
             <img
               src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
@@ -49,7 +55,7 @@
           </button>
         </form>
         <p><%= daily.name %></p>
-        <form action="/userProfile/<%= daily._id%>/edit" method="get">
+        <form action="/userProfile/daily/<%= daily._id %>/edit" method="GET">
           <button type="submit" class="hovering">
             <img
               src="/images/icons8-edit-24.png"
@@ -62,14 +68,15 @@
       <% }) %>
     </div>
     <div id="add-todo">
-      <form action="/userProfile/add-todo" method="POST">
+      <form action="/userProfile/todo/create" method="POST">
         <label>
           <input type="text" name="name" placeholder="Add a To Do" />
         </label>
+        <button type="submit">Add To Do</button>
       </form>
       <% todoItems.forEach(item => { %>
       <div class="todo-cards">
-        <form action="/userProfile/<%= item._id %>/delete" method="POST">
+        <form action="/userProfile/todo/<%= item._id %>/delete" method="POST">
           <button type="submit" class="hovering">
             <img
               src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
@@ -79,7 +86,7 @@
           </button>
         </form>
         <p><%= item.name %></p>
-        <form action="/userProfile/<%= item._id%>/edit" method="get">
+        <form action="/userProfile/todo/<%= item._id %>/edit" method="GET">
           <button type="submit" class="hovering">
             <img
               src="/images/icons8-edit-24.png"

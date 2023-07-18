@@ -1,6 +1,6 @@
-<% if (isLoggedIn) { %> <%- include('./partials/userNav') %>
+<% if (isLoggedIn) { %> <% include('./partials/userNav') %>
 <h1>BIENVENIDOS</h1>
-<% } else { %> <%- include('./partials/nav') %>
+<% } else { %> <% include('./partials/nav') %>
 <div class="slogan">
   <h1>Motivate yourself to achieve your goals.</h1>
   <p>
@@ -14,12 +14,7 @@
     Password must be 1 to 6 characters, containing at least one number, one
     lowercase and one uppercase letter.
   </p>
-  <form
-    class="formHome"
-    action="/auth/signup"
-    method="POST"
-    enctype="multipart/form-data"
-  >
+  <form class="formHome" action="/" method="POST" enctype="multipart/form-data">
     <label>
       <input type="text" name="username" placeholder="Username" />
     </label>
