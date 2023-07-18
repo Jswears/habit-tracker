@@ -14,40 +14,38 @@ const Habit = require("../models/Habits.model");
 //require middleware
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
-//GET /signup route
-router.get("/signup", isLoggedOut, (req, res) =>
-  res.render("auth/signup", { errorMessage: null })
-);
-
-//POST from /signup
-router.post("/signup", uploader.single("image"), isLoggedOut, async (req, res, next) => {
+router.post(
+  "/signup",
+  uploader.single("image"),
+  isLoggedOut,
+  async (req, res, next) => {
+    // Retrieve form data from request body
     const { username, email, password } = req.body;
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-    const image = req.file;
+    const image = req.file.path;
+    console.log("username");
 
     // Make sure users fill all mandatory fields:
     if (!username || !email || !password) {
-      res.render("auth/signup", {
+      return res.render("index", {
         errorMessage:
           "All fields are mandatory. Please provide your username, email, and password.",
       });
-      return;
     }
     if (!regex.test(password)) {
-      res.status(500).render("auth/signup", {
+      return res.status(500).render("index", {
         errorMessage:
-          "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
+          "Password needs to have at least 6 characters and must contain at least one number, one lowercase, and one uppercase letter.",
       });
-      return;
     }
 
-    // Encrypting
-    const saltRounds = 13;
-    const salt = bcrypt.genSaltSync(saltRounds);
-    const passwordHash = bcrypt.hashSync(password, salt);
-
     try {
-      // creates new User
+      // Encrypt the password
+      const saltRounds = 13;
+      const salt = await bcrypt.genSalt(saltRounds);
+      const passwordHash = await bcrypt.hash(password, salt);
+
+      // Create a new user
       const newUser = await User.create({
         username,
         email,
@@ -58,9 +56,9 @@ router.post("/signup", uploader.single("image"), isLoggedOut, async (req, res, n
       res.redirect("/auth/login");
     } catch (error) {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(500).render("auth/signup", { errorMessage: error.message });
+        res.status(500).render("index", { errorMessage: error.message });
       } else if (error.code === 11000) {
-        res.status(500).render("auth/signup", {
+        res.status(500).render("index", {
           errorMessage:
             "Username and email need to be unique. Either username or email is already used",
         });

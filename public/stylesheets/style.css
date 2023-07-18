@@ -1,434 +1,143 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
-  font-size: 14px;
-  overflow: hidden;
-}
-
-/* Home Page */
-
-/* Form Sign Up or Register */
-/*.register {
-  text-align: center;
-}
-
-.register a {
-  color: #333;
-  text-decoration: none;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-form {
   display: flex;
-  flex-direction: column;
-}
-
-.linkFrom {
-  color: #fff;
-}
-
-label {
-  margin-bottom: 10px;
-}
-
-input {
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.error {
-  color: #d8000c;
-  background-color: #ffbaba;
-  padding: 10px;
-  border: 1px solid #d8000c;
-  border-radius: 4px;
-  margin-top: 10px;
-}
-
-#signup {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-#signup-btn {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  font-size: 18px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#signup-btn:hover {
-  background-color: #45a049;
-}
-/* Log In Page */
-/*#login-container {
+  justify-content: center;
+  align-items: center;
   height: 100vh;
+  margin: 0;
   overflow: hidden;
 }
 
-#login-content {
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding-top: 70px;
-  padding-bottom: 56px;
-}
-
-#login-content label {
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
-
-#login-content input {
-  width: 647px;
-  height: 30px;
-  border-radius: 2px;
-  margin-bottom: 28px;
-  padding: 10px 12px;
-  font-size: 20px;
-}
-
-#login-content button {
-  width: 62px;
-  height: 32px;
-  margin: auto;
-  text-align: center;
-  border-radius: 2px;
-}
-
-#login-content a {
-  text-decoration: none;
-  color: #000;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-#login-btn {
-  padding: 8px 12px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-#login-btn:hover {
-  background-color: #45a049;
-}
-
-/* Nav User Iterface */
-/*.userNav {
-  width: 100vw;
-  max-width: 100%;
-  background: #eceaff;
-  color: #525252;
-}
-
-.interfaceNav {
-  background: #1a1a1a;
-  padding: 10px 10px;
+/*Home page left side*/
+#home {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+}
+
+#home .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
   position: relative;
 }
 
-.logo {
-  width: 90px;
-}
-.user-pic {
-  width: 120px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-left: 30px;
+#home .left img {
+  width: 600px;
+  height: 600px;
 }
 
-nav ul {
-  width: 100vw;
-  text-align: right;
-}
-
-nav ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 10px 20px;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.sub-menu-wrap {
+#home .left h1 {
+  width: 482px;
+  height: 150px;
   position: absolute;
-  top: 9.3vh;
-  right: 0vw;
-  width: 320px;
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 0.5s;
+  top: 1%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.sub-menu-wrap.open-menu {
-  max-height: 400px;
+#home .left h1 span {
+  color: #624bbc;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.sub-menu {
-  background-color: #ccc;
-  padding: 20px;
-  margin: 10px;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-}
-
-.user-info h3 {
-  font-weight: 500;
-}
-
-.user-info img {
-  width: 80px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.sub-manu hr {
-  border: 0;
-  height: 1px;
-  width: 100%;
-  background: #ccc;
-  margin: 15px 0 10px;
-}
-
-.sub-menu-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #525252;
-  margin: 12px 0;
-}
-
-.sub-menu-link p {
-  width: 100%;
-}
-
-.sub-menu-link button {
-  width: 100%;
-}
-
-.sub-menu-link img {
-  width: 40px;
-  background: #e5e5e5;
-  border-radius: 50%;
-  padding: 8px;
-  margin-right: 15px;
-}
-
-.sub-menu-link {
-  font-size: 22px;
-}
-
-.sub-menu-link:hover span {
-  transform: translateX(5px);
-}
-
-.sub-menu-link:hover p {
-  font-weight: 600;
-}
-
-.sub-menu-link:hover button {
-  font-weight: 600;
-}
-
-.userNav img {
-  margin-top: 10px;
-  width: 100px;
-  height: 100px;
-  margin-right: 10px;
-}
-
-.userNav a {
-  text-decoration: none;
-  color: #ffffff;
-  margin-right: 20px;
-}
-
-.userNav a:hover {
-  text-decoration: underline;
-}
-
-.userNav form {
-  margin-left: auto;
-}
-
-.userNav button {
-  background-color: #ff4136;
-  color: #ffffff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.userNav button:hover {
-  background-color: #d30f0d;
-}
-
-/* User Interface */
-
-/* Account */
-/*.account-container {
+/*Home page right side*/
+#home .right {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50vw;
+  height: 100vh;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 0 auto;
+  background-color: #fbf9f1;
 }
 
-.account-container img {
-  width: 200px;
-  height: 200px;
-  margin-bottom: 20px;
-}
-
-.account-container > div {
+.accountLogan {
+  width: 500px;
+  height: 138px;
+  color: #1b1c17;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.account-container button.accountButton,
-.account-container button.btn-primary {
-  background-color: #0074d9;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.account-container button.accountButton:hover,
-.account-container button.btn-primary:hover {
-  background-color: #005da5;
-}
-
-/* Account Update */
-/*.container {
-  width: 60%;
-  margin: 0 auto;
-  padding: 20px;
+  margin-bottom: 40px;
+  gap: 16px;
+  margin: auto;
   text-align: center;
 }
 
-h2 {
-  font-size: 24px;
+.accountLogan h2 {
+  font-family: "Rubik", sans-serif;
 }
 
-form {
+.accountLogan p {
+  font-size: 16px;
+}
+
+#home .right form {
   margin-top: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 18px;
+#home .right input {
+  width: 500px;
+  height: 56px;
+  margin-bottom: 32px;
 }
 
-#signup input[type="text"],
-#signup input[type="email"],
-#signup input[type="password"] {
-  padding: 12px;
+#home .right label {
+  font-weight: bold;
+}
+
+#home .right .row {
+  align-content: center;
+}
+
+.custom-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+  width: 500px;
+}
+
+#home button {
+  border-radius: 100px;
+  width: 500px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+}
+
+#home .btn {
+  border-radius: 100px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+}
+
+#home .right form p {
+  color: #48454e;
+  text-align: center;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
 }
 
-/* Habits, daily, todo 
-#add-habit,
-#add-daily,
-#add-todo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-#add-habit input,
-#add-daily input,
-#add-todo input {
-  padding: 12px;
+#home .right form p a {
+  color: #34bfa7;
+  text-align: center;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
 }
-
-#main-container {
-  background-color: #fff;
-  width: 100vw;
-  max-width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-}
-
-.habit-cards,
-.daily-cards,
-.todo-cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border: 1px solid black;
-  width: 220px;
-  border-radius: 7px;
-  height: 59px;
-  padding: 4px;
-}
-
-.habit-cards button {
-  cursor: pointer;
-}
-
-.hovering {
-  cursor: pointer;
-}
-
-.hovering:hover {
-  background-color: red;
-  border-radius: 7px;
-} */
-
-/* Daily */
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.center-align {
-  background-color: aqua;
-}
-
-/* To do */

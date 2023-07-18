@@ -1,50 +1,67 @@
-<div class="row">
-  <div class="center-align" style="width: 100%;">
-    <h2>Motivate yourself to achieve your goals.</h2>
+<% if (isLoggedIn) { %> <%- include('./partials/userNav') %>
+<h1>BIENVENIDOS</h1>
+<% } else { %>
+<div id="home">
+  <div class="left">
+    <div class="slogan">
+      <h1>Motivate yourself to achieve your goals! with <span>Trackify</span></h1>
+    </div>
+    <img src="images/homePic.png" alt="Image" />
   </div>
-  <div class="yellow lighten-5 center-align" style="width: 100%;">
-    <h2>Create an Account</h2>
-    <p>
-      It's time to have fun when you get things done! Join over 4 million
-      Trackifyers and improve your life one task at a time.
-    </p>
-    <form action="/auth/signup" method="POST" enctype="multipart/form-data">
-      <div class="input-field col s10">
-        <input type="text" id="username" class="validate">
-        <label for="username">Username</label>
+  <div class="right">
+    <div class="row">
+      <div class="accountLogan">
+        <h2 class="signup">Create an Account</h2>
+        <p>
+          It's time to have fun when you get things done! Join over 4 million
+          Trackifyers and improve your life one task at a time.
+        </p>
       </div>
+      <form action="/auth/signup" method="POST" enctype="multipart/form-data">
 
-      <div class="input-field col s10">
-        <input type="email" id="email" class="validate">
-        <label for="email">Email</label>
-      </div>
-
-      <div class="input-field col s10">
-        <input type="password" id="password" class="validate">
-        <label for="password">Password</label>
-      </div>
-
-      <form action="#">
-        <div class="file-field input-field col s10">
-          <div class="btn">
-            <span>Choose file</span>
-            <input type="file" multiple>
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" placeholder="Upload a file" name="image" accept="image/png, image/jpg">
+        <div class="row">
+          <div class="input-field">
+            <input id="username" type="text" class="validate" required>
+            <label for="username">Username</label>
           </div>
         </div>
-      </form>
 
-      <p>
-        Password is mandatory.
-      </p>
-      <br>
-      <button class="waves-effect waves-light btn col s10" type="submit">Create an Account</button>
-      <br>
-      <a class="black-text" href="/auth/login">Already have an account? <span>Login!</span></a>
-    </form>
+        <div class="row">
+          <div class="input-field">
+            <input id="email" type="email" class="validate" required>
+            <label for="email">Email</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field">
+            <input id="password" type="password" class="validate" required>
+            <label for="password">Password</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="file-field input-field ">
+            <div class="btn">
+              <span>Choose Image</span>
+              <input type="file" name="image" accept="image/png, image/jpg" required />
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" />
+            </div>
+          </div>
+        </div>
+        <p>
+          <label>
+            <input type="checkbox" required />
+            <span>I have read and agree to the Terms of Service and Privacy Policy</span>
+          </label>
+        </p>
+        <br>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Create an Account</button>
+        <p>Already have an account? <a href="/auth/login">Login!</a></p>
+      </form>
+    </div>
   </div>
 </div>
-
-
+<% } %>
