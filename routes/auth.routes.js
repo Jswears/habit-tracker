@@ -27,7 +27,7 @@ router.post(
   async (req, res, next) => {
     const { username, email, password } = req.body;
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-    const image = req.file.path;
+    const image = req.file;
 
     // Make sure users fill all mandatory fields:
     if (!username || !email || !password) {
