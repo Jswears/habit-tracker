@@ -1,26 +1,54 @@
 <div id="login-container">
-  <div id="login-content">
-    <a href="/"><img src="/images/Trackify.png" alt="Logo" /></a>
-    <form action="/auth/login" method="POST">
-      <label> E-Mail </label>
-      <input
-        name="email"
-        type="email"
-        placeholder="<%= typeof errorMessage !== 'undefined' ? errorMessage : '' %>"
-        required
-      />
-
-      <label> Password </label>
-      <input
-        name="password"
-        type="password"
-        placeholder="<%= typeof passwordErrorMessage !== 'undefined' ? passwordErrorMessage : ''%>"
-      />
-
-      <button type="submit" id="login-btn">Login</button>
-    </form>
-    <a href="/auth/signup"
-      >Don't have a trackify account? <span class="bold">Signup</span></a
-    >
+  <div class="left">
+    <img src="/images/login-img.png" alt="Logo" />
+    <h1>Welcome back to <span class="teal-text">Trackify</span></h1>
+  </div>
+  <div class="right">
+    <div class="login-slogan">
+      <h2>Login!</h2>
+      <p>
+        Welcome back Trackifiyer! We're happy to have you back and keep up with
+        all those goals on your board! Let's build some good habits!
+      </p>
+    </div>
+    <div id="login-form">
+      <div id="login-content">
+        <form action="/auth/login" method="POST">
+          <div class="input-field s6">
+            <input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="<%= typeof errorMessage !== 'undefined' ? errorMessage : '' %>"
+              class="validate"
+            />
+            <label for="email">E-Mail</label>
+          </div>
+          <div class="input-field s6">
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="<%= typeof passwordErrorMessage !== 'undefined' ? passwordErrorMessage : '' %>"
+              class="validate"
+            />
+            <label for="password">Password</label>
+          </div>
+          <div class="login-btn-section">
+            <button
+              class="btn waves-effect waves-light"
+              type="submit"
+              id="login-btn"
+            >
+              Login
+            </button>
+            <a href="/"
+              >Don't have a Trackify account?
+              <span class="bold-login">Create an Account!</span></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
