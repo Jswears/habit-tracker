@@ -10,6 +10,141 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/*Home page left side*/
+#home {
+  display: flex;
+  align-items: center;
+}
+
+#home .left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  position: relative;
+}
+
+#home .left img {
+  width: 600px;
+  height: 600px;
+}
+
+#home .left h1 {
+  width: 482px;
+  height: 150px;
+  position: absolute;
+  top: 1%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#home .left h1 span {
+  color: #624bbc;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*Home page right side*/
+#home .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #fbf9f1;
+}
+
+.accountLogan {
+  width: 500px;
+  height: 138px;
+  color: #1b1c17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 16px;
+  margin: auto;
+  text-align: center;
+}
+
+.accountLogan h2 {
+  font-family: "Rubik", sans-serif;
+}
+
+.accountLogan p {
+  font-size: 16px;
+}
+
+#home .right form {
+  margin-top: 20px;
+}
+
+#home .right input {
+  width: 500px;
+  height: 56px;
+  margin-bottom: 32px;
+}
+
+#home .right label {
+  font-weight: bold;
+}
+
+#home .right .row {
+  align-content: center;
+}
+
+.custom-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-field {
+  width: 500px;
+}
+
+#home button {
+  border-radius: 100px;
+  width: 500px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+}
+
+#home .btn {
+  border-radius: 100px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+}
+
+#home .right form p {
+  color: #48454e;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
+}
+
+#home .right form p a {
+  color: #34bfa7;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px; /* 125% */
+  letter-spacing: 0.1px;
+}
+
 /* LOGIN */
 
 #login-container {
