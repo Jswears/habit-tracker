@@ -247,9 +247,41 @@ body {
   height: 40px;
   border-radius: 20px;
   margin-bottom: 16px;
+  max-width: 300px;
 }
 
 .bold-login {
   color: #624bbc;
   font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  #login-container .left {
+    display: none;
+  }
+
+  .input-field {
+    max-width: 300px;
+  }
+
+  .login-slogan {
+    max-width: 300px;
+  }
+
+  #login-container .right form {
+    max-width: 300px;
+  }
+
+  #login-container .right label {
+    max-width: 300px;
+  }
+
+  #login-container .right input {
+    max-width: 300px;
+  }
+
+  body {
+    background-color: #fbf9f1;
+    margin: auto;
+  }
 }
