@@ -3,16 +3,14 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #fff;
-  box-sizing: border-box;
   font-size: 14px;
   overflow: hidden;
 }
 
 /* Home Page */
 
-
 /* Form Sign Up or Register */
-.register {
+/*.register {
   text-align: center;
 }
 
@@ -73,7 +71,7 @@ input {
   background-color: #45a049;
 }
 /* Log In Page */
-#login-container {
+/*#login-container {
   height: 100vh;
   overflow: hidden;
 }
@@ -134,7 +132,7 @@ input {
 }
 
 /* Nav User Iterface */
-.userNav {
+/*.userNav {
   width: 100vw;
   max-width: 100%;
   background: #eceaff;
@@ -296,7 +294,7 @@ nav ul li a {
 /* User Interface */
 
 /* Account */
-.account-container {
+/*.account-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -338,7 +336,7 @@ nav ul li a {
 }
 
 /* Account Update */
-.container {
+/*.container {
   width: 60%;
   margin: 0 auto;
   padding: 20px;
@@ -369,7 +367,7 @@ label {
   width: 100%;
 }
 
-/* Habits, daily, todo */
+/* Habits, daily, todo 
 #add-habit,
 #add-daily,
 #add-todo {
@@ -421,43 +419,12 @@ label {
 .hovering:hover {
   background-color: red;
   border-radius: 7px;
-}
+} */
 
 /* Daily */
 .container {
   background: #005da5;
   height: 100vh;
-  width: 50vw;
 }
 
 /* To do */
-
-/* Footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.flex-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.information {
-  flex: 0 0 calc(20% - 10px);
-  margin-bottom: 20px;
-}
-
-footer h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}

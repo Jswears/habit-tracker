@@ -1,37 +1,47 @@
 <div class="row">
-  <div class="container left center-align" style="margin-right: -15px; padding-right: 10;">
+  <div class="container left center-align" style="width: 100vw;">
     <h2>Motivate yourself to achieve your goals.</h2>
   </div>
-  <div class="container right yellow lighten-5" style="margin-left: -15px; padding-left: 10;">
-    <h2 class="signup">Create an Account</h2>
+  <div class="container right yellow lighten-5 center-align" style="width: 100vw;">
+    <h2>Create an Account</h2>
     <p>
       It's time to have fun when you get things done! Join over 4 million
       Trackifyers and improve your life one task at a time.
     </p>
-    <form class="center-align" action="/auth/signup" method="POST" enctype="multipart/form-data">
-      <div class="input-field col s12">
+    <form action="/auth/signup" method="POST" enctype="multipart/form-data">
+      <div class="input-field col s10">
         <input type="text" id="username" class="validate">
         <label for="username">Username</label>
       </div>
 
-      <div class="input-field col s12">
+      <div class="input-field col s10">
         <input type="email" id="email" class="validate">
         <label for="email">Email</label>
       </div>
 
-      <div class="input-field col s12">
+      <div class="input-field col s10">
         <input type="password" id="password" class="validate">
         <label for="password">Password</label>
       </div>
 
-      <label>
-        <input type="file" name="image" accept="image/png, image/jpg" />
-      </label>
+      <form action="#">
+        <div class="file-field input-field col s10">
+          <div class="btn">
+            <span>Choose file</span>
+            <input type="file" multiple>
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload a file" name="image" accept="image/png, image/jpg">
+          </div>
+        </div>
+      </form>
 
       <p>
         Password is mandatory.
       </p>
-      <button class="waves-effect waves-light btn" type="submit">Create an Account</button>
+      <br>
+      <button class="waves-effect waves-light btn col s10" type="submit">Create an Account</button>
+      <br>
       <a class="black-text" href="/auth/login">Already have an account? <span>Login!</span></a>
     </form>
   </div>
