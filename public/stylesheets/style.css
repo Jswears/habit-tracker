@@ -9,35 +9,8 @@ body {
 
 /* Home Page */
 
-/* label color */
-.input-field label {
-  color: #000;
-}
-/* label focus color */
-.input-field input[type="text"]:focus + label {
-  color: #000;
-}
-/* label underline focus color */
-.input-field input[type="text"]:focus {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-/* valid color */
-.input-field input[type="text"].valid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-/* invalid color */
-.input-field input[type="text"].invalid {
-  border-bottom: 1px solid #000;
-  box-shadow: 0 1px 0 0 #000;
-}
-/* icon prefix focus color */
-.input-field .prefix.active {
-  color: #000;
-}
 
-/* Form Sign Up or Register 
+/* Form Sign Up or Register */
 .register {
   text-align: center;
 }
@@ -98,7 +71,7 @@ input {
 #signup-btn:hover {
   background-color: #45a049;
 }
-/* Log In Page 
+/* Log In Page */
 #login-container {
   height: 100vh;
   overflow: hidden;
@@ -157,9 +130,9 @@ input {
 
 #login-btn:hover {
   background-color: #45a049;
-} */
+}
 
-/* Nav User Iterface 
+/* Nav User Iterface */
 .userNav {
   width: 100vw;
   max-width: 100%;
@@ -317,11 +290,11 @@ nav ul li a {
 
 .userNav button:hover {
   background-color: #d30f0d;
-} */
+}
 
 /* User Interface */
 
-/* Account 
+/* Account */
 .account-container {
   display: flex;
   flex-direction: column;
@@ -361,9 +334,9 @@ nav ul li a {
 .account-container button.accountButton:hover,
 .account-container button.btn-primary:hover {
   background-color: #005da5;
-} */
+}
 
-/* Account Update 
+/* Account Update */
 .container {
   width: 60%;
   margin: 0 auto;
@@ -393,9 +366,9 @@ label {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
-} */
+}
 
-/* Habits, daily, todo 
+/* Habits, daily, todo */
 #add-habit,
 #add-daily,
 #add-todo {
@@ -447,13 +420,13 @@ label {
 .hovering:hover {
   background-color: red;
   border-radius: 7px;
-} */
+}
 
 /* Daily */
 
 /* To do */
 
-/* Footer 
+/* Footer */
 footer {
   background-color: #f2f2f2;
   padding: 20px;
@@ -481,4 +454,4 @@ footer p {
 footer h3 {
   font-size: 20px;
   margin-bottom: 10px;
-}*/
+}
