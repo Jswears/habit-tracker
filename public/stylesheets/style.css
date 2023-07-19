@@ -280,6 +280,7 @@ body {
   height: 40px;
   border-radius: 20px;
   margin-bottom: 16px;
+  max-width: 300px;
 }
 
 .bold-login {
@@ -318,12 +319,79 @@ nav img {
 
 /* Profile */
 
-/* Home Responsive Mobile*/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.habit-section,
+.daily-section,
+.todo-section {
+  width: 459px;
+  height: 869px;
+  margin-top: 184px;
+  background-color: #f5f5f5;
+  border-radius: 24px;
+  margin-right: 24px;
+  padding: 24px;
+}
+
+.card-title {
+  text-align: center;
+  border-bottom: 1px solid #979797;
+  font-size: 20px;
+  color: #1b1c17;
+  font-weight: 700;
+  font-family: Rubik;
+  padding: 8px 10px 30px 10px;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*mobile*/
 @media (max-width: 767px) {
-
-  #home .left {
+   #home .left {
+    display: none;
+  }
+  
+  #login-container .left {
     display: none;
   }
 
+  .input-field {
+    max-width: 300px;
+  }
+
+  .login-slogan {
+    max-width: 300px;
+  }
+
+  #login-container .right form {
+    max-width: 300px;
+  }
+
+  #login-container .right label {
+    max-width: 300px;
+  }
+
+  #login-container .right input {
+    max-width: 300px;
+  }
+
+  body {
+    background-color: #fbf9f1;
+    margin: auto;
+  }
 }
