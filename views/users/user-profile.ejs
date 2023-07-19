@@ -1,3 +1,4 @@
+<%- include('../partials/userNav') %>
 <main>
   <div class="main-container">
     <!-- Add Habit Modal -->
@@ -9,15 +10,10 @@
             <label>
               <input type="text" name="name" placeholder="Add a habit" />
             </label>
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
-            >
+            <button type="submit" class="modal-close waves-effect waves-light btn">
               Add
             </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
+            <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
           </form>
         </div>
       </div>
@@ -42,21 +38,13 @@
       <% habitList.forEach(habit => { %>
       <form action="/userProfile/habits/<%= habit._id %>/delete" method="POST">
         <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/967564a359c9dced95fb88c0ccb7cb02.png" alt="delete-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <p><%= habit.name %></p>
       <form action="/userProfile/habits/<%= habit._id %>/edit" method="GET">
         <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/icons8-edit-24.png" alt="edit-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <% }) %>
@@ -71,15 +59,10 @@
             <label>
               <input type="text" name="name" placeholder="Add a Daily" />
             </label>
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
-            >
+            <button type="submit" class="modal-close waves-effect waves-light btn">
               Add
             </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
+            <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
           </form>
         </div>
       </div>
@@ -99,21 +82,13 @@
       <% dailyHabits.forEach(daily => { %>
       <form action="/userProfile/daily/<%= daily._id %>/delete" method="POST">
         <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/967564a359c9dced95fb88c0ccb7cb02.png" alt="delete-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <p><%= daily.name %></p>
       <form action="/userProfile/daily/<%= daily._id %>/edit" method="GET">
         <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/icons8-edit-24.png" alt="edit-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <% }) %>
@@ -128,15 +103,10 @@
             <label>
               <input type="text" name="name" placeholder="Add a To Do" />
             </label>
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
-            >
+            <button type="submit" class="modal-close waves-effect waves-light btn">
               Add
             </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
+            <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
           </form>
         </div>
       </div>
@@ -156,21 +126,13 @@
       <% todoItems.forEach(item => { %>
       <form action="/userProfile/todo/<%= item._id %>/delete" method="POST">
         <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/967564a359c9dced95fb88c0ccb7cb02.png" alt="delete-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <p><%= item.name %></p>
       <form action="/userProfile/todo/<%= item._id %>/edit" method="GET">
         <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
+          <img src="/images/icons8-edit-24.png" alt="edit-icon" style="width: 12px; height: 15px" />
         </button>
       </form>
       <% }) %>
