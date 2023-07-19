@@ -1,3 +1,17 @@
-<form action="/logout" method="POST">
-  <button type="submit">L</button>
-</form>
+<!-- Dropdown Structure -->
+<nav>
+    <a>Trackify</a>
+    <ul class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li><a href="#!"><img src="/images/userProfile.png" alt="Profile Picture" class="dropdown-trigger" data-target="dropdown1"></a></li>
+    </ul>
+</nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="/account">Edit Profile</a></li>
+  <li><a href="#!">Friends</a></li>
+  <li><a href="#!">Settings</a></li>
+  <li><a href="#!">Support</a></li>
+  <li><a href="/logout">Logout</a></li>
+</ul>
