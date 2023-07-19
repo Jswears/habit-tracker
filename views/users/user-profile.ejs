@@ -4,62 +4,86 @@
     <div class="habit-section">
       <div id="add-habit-modal" class="modal">
         <div class="modal-content">
-          <h4>Add Habit</h4>
+          <h4>Add a Habit</h4>
           <form action="/userProfile/habits/create" method="POST">
             <label>
               <input type="text" name="name" placeholder="Add a habit" />
             </label>
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
+            <a href="#!" class="modal-close btn-flat"
+              ><span class="modal-btn no-capitalization">Cancel</span></a
             >
-              Add
+            <button type="submit" class="modal-close btn-flat">
+              <span class="modal-btn no-capitalization">Add Habit</span>
             </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
           </form>
         </div>
       </div>
-      <h3 class="card-title">Habits</h3>
-      <div class="cards-content">
-        <form action="/logout" method="POST">
-          <button type="submit">L</button>
-        </form>
-        <img src="images/habit-img.png" alt="Rollerskating" />
-        <div>
-          <h4>No habits</h4>
-          <p>
-            Here you will find your habits. To add one, click on ‘add a habit’
-          </p>
-        </div>
+      <div class="card-title">
+        <h3>Habits</h3>
       </div>
-      <button data-target="add-habit-modal" class="btn modal-trigger">
-        + Add Habit
-      </button>
+      <!-- <form action="/logout" method="POST">
+          <button type="submit">L</button>
+        </form> -->
+      <% if (habitList.length === 0) { %>
+      <div class="cards-content">
+        <img src="images/habit-img.png" alt="Rollerskating" />
+        <h4>No habits</h4>
+        <p>
+          Here you will find your habits. To add one, click on ‘add a habit’
+        </p>
+      </div>
+      <% } else { %>
+
+      <!-- Dropdown Trigger -->
 
       <!-- Habit List -->
-      <% habitList.forEach(habit => { %>
-      <form action="/userProfile/habits/<%= habit._id %>/delete" method="POST">
-        <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+      <div class="habit-content">
+        <% habitList.forEach(habit => { %>
+
+        <div class="habit-item">
+          <p><%= habit.name %></p>
+          <a class="dropdown-trigger" href="#" data-target="dropdown1"
+            ><i class="material-icons" style="color: #000">arrow_right</i></a
+          >
+
+          <!-- Dropdown Structure -->
+          <ul id="dropdown1" class="dropdown-content">
+            <li>
+              <form
+                action="/userProfile/habits/<%= habit._id %>/delete"
+                method="POST"
+              >
+                <button type="submit">
+                  <i class="material-icons" style="#000">delete</i>
+                </button>
+              </form>
+            </li>
+            <li class="divider" tabindex="-1"></li>
+            <li>
+              <form
+                action="/userProfile/habits/<%= habit._id %>/edit"
+                method="GET"
+              >
+                <button type="submit">
+                  <i class="material-icons" color="#000">edit</i>
+                </button>
+              </form>
+            </li>
+          </ul>
+        </div>
+
+        <% }) %>
+      </div>
+      <% } %>
+
+      <div class="card-btn">
+        <button
+          data-target="add-habit-modal"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+        >
+          + Add Habit
         </button>
-      </form>
-      <p><%= habit.name %></p>
-      <form action="/userProfile/habits/<%= habit._id %>/edit" method="GET">
-        <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
-        </button>
-      </form>
-      <% }) %>
+      </div>
     </div>
 
     <!--Daily Modal -->
@@ -71,19 +95,23 @@
             <label>
               <input type="text" name="name" placeholder="Add a Daily" />
             </label>
+            <a href="#!" class="modal-close waves-effect waves-light btn"
+              >Cancel</a
+            >
             <button
               type="submit"
               class="modal-close waves-effect waves-light btn"
             >
               Add
             </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
           </form>
         </div>
       </div>
-      <h3 class="card-title">Daily Task</h3>
+      <div class="card-title">
+        <h3>Daily Task</h3>
+      </div>
+
+      <% if (dailyHabits.length === 0) { %>
       <div class="cards-content">
         <img src="images/daily-img.png" alt="Taking rubbish out" />
         <h4>No Tasks</h4>
@@ -91,32 +119,45 @@
           Here you will find your daily tasks. To add one, click on ‘add a task’
         </p>
       </div>
-      <button data-target="add-daily-modal" class="btn modal-trigger">
-        + Add Daily
-      </button>
-
+      <% } else { %>
       <!-- Daily Habits List -->
-      <% dailyHabits.forEach(daily => { %>
-      <form action="/userProfile/daily/<%= daily._id %>/delete" method="POST">
-        <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+      <div class="daily-content">
+        <% dailyHabits.forEach(daily => { %>
+        <div class="daily-item">
+          <div class="daily-name">
+            <form
+              action="/userProfile/daily/<%= daily._id %>/edit"
+              method="GET"
+            >
+              <button type="submit">
+                <i class="material-icons tiny">edit</i>
+              </button>
+            </form>
+            <p><%= daily.name %></p>
+          </div>
+          <form
+            id="deleteForm"
+            action="/userProfile/daily/<%= daily._id %>/delete"
+            method="POST"
+          >
+            <label>
+              <input type="checkbox" id="deleteCheckbox" class="filled-in" />
+              <span></span>
+            </label>
+          </form>
+        </div>
+        <% }) %>
+      </div>
+      <% } %>
+
+      <div class="card-btn">
+        <button
+          data-target="add-daily-modal"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+        >
+          + Add Daily
         </button>
-      </form>
-      <p><%= daily.name %></p>
-      <form action="/userProfile/daily/<%= daily._id %>/edit" method="GET">
-        <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
-        </button>
-      </form>
-      <% }) %>
+      </div>
     </div>
 
     <!-- To Do Modal -->
@@ -128,19 +169,15 @@
             <label>
               <input type="text" name="name" placeholder="Add a To Do" />
             </label>
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
-            >
-              Add
-            </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
+            <a href="#!" class="modal-close btn-flat">Cancel</a>
+            <button type="submit" class="modal-close btn-flat">Add</button>
           </form>
         </div>
       </div>
-      <h3 class="card-title">To Do</h3>
+      <div class="card-title">
+        <h3>To Do</h3>
+      </div>
+      <% if (todoItems.length ===0) { %>
       <div class="cards-content">
         <img src="images/todo-img.png" alt="Person with a todo list" />
         <h4>No to do's</h4>
@@ -148,32 +185,44 @@
           Here you will find your to do list. To add one, click on ‘add a task’
         </p>
       </div>
-      <button data-target="add-todo-modal" class="btn modal-trigger">
-        + Add To Do
-      </button>
-
+      <% } else { %>
       <!-- To Do Items List -->
-      <% todoItems.forEach(item => { %>
-      <form action="/userProfile/todo/<%= item._id %>/delete" method="POST">
-        <button type="submit">
-          <img
-            src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
-            alt="delete-icon"
-            style="width: 12px; height: 15px"
-          />
+      <div class="todo-content">
+        <% todoItems.forEach(item => { %>
+        <div class="todo-item">
+          <form action="/userProfile/todo/<%= item._id %>/delete" method="POST">
+            <button type="submit">
+              <img
+                src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
+                alt="delete-icon"
+                style="width: 12px; height: 15px"
+              />
+            </button>
+          </form>
+          <p><%= item.name %></p>
+          <form action="/userProfile/todo/<%= item._id %>/edit" method="GET">
+            <button type="submit">
+              <img
+                src="/images/icons8-edit-24.png"
+                alt="edit-icon"
+                style="width: 12px; height: 15px"
+              />
+            </button>
+          </form>
+        </div>
+        <% }) %>
+      </div>
+
+      <% } %>
+
+      <div class="card-btn">
+        <button
+          data-target="add-todo-modal"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+        >
+          + Add To Do
         </button>
-      </form>
-      <p><%= item.name %></p>
-      <form action="/userProfile/todo/<%= item._id %>/edit" method="GET">
-        <button type="submit">
-          <img
-            src="/images/icons8-edit-24.png"
-            alt="edit-icon"
-            style="width: 12px; height: 15px"
-          />
-        </button>
-      </form>
-      <% }) %>
+      </div>
     </div>
   </div>
 </main>

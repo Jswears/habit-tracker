@@ -6,7 +6,7 @@
     <div class="slogan">
       <h1>
         Motivate yourself to achieve your goals! with <span>Trackify</span>
-        <img src="images/Lines.png" alt="Lines">
+        <img src="images/Lines.png" alt="Lines" />
       </h1>
     </div>
     <img src="images/homePic.png" alt="Image" width="200" />
@@ -21,27 +21,47 @@
           Trackifyers and improve your life one task at a time.
         </p>
       </div>
-      <form class="col s12 formHome" action="/auth/signup" method="POST" enctype="multipart/form-data">
+      <form
+        class="col s12 formHome"
+        action="/auth/signup"
+        method="POST"
+        enctype="multipart/form-data"
+      >
         <div class="row">
           <div class="input-field">
-
-            <input type="text" name="username" id="username" class="validate text-field" required />
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="validate text-field"
+              required
+            />
             <label for="username">Username</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field">
-
-            <input type="email" name="email" id="email" class="validate text-field" required />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="validate text-field"
+              required
+            />
             <label for="email">Email</label>
           </div>
         </div>
 
         <div class="row">
           <div class="input-field">
-
-            <input type="password" name="password" id="password" class="validate text-field" required />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="validate text-field"
+              required
+            />
             <label for="password">Password</label>
           </div>
         </div>
@@ -50,7 +70,12 @@
           <div class="file-field input-field">
             <div class="btn">
               <span>Choose Image</span>
-              <input type="file" name="image" accept="image/png, image/jpg" required />
+              <input
+                type="file"
+                name="image"
+                accept="image/png, image/jpg"
+                required
+              />
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" />
@@ -61,11 +86,21 @@
         <p>
           <label>
             <input type="checkbox" required />
-            <span>I have read and agree to the Terms of Service and Privacy Policy</span>
+            <span
+              >I have read and agree to the Terms of Service and Privacy
+              Policy</span
+            >
           </label>
         </p>
         <br />
-        <button class="btn waves-effect waves-light" type="submit" name="action">Create an Account</button>
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          id="home-btn"
+        >
+          Create an Account
+        </button>
         <p>Already have an account? <a href="/auth/login">Login!</a></p>
       </form>
     </div>

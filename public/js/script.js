@@ -3,13 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("trackify JS imported successfully!");
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  let elems = document.querySelectorAll(".dropdown-trigger");
-  let instances = M.Dropdown.init(elems, {});
-  
+  var elems = document.querySelectorAll(".sidenav");
+  var instances = M.Sidenav.init(elems, {
+    edge: "right", // Set the edge option to 'right' if needed
+  });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var modals = document.querySelectorAll(".modal");
   M.Modal.init(modals);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".dropdown-trigger");
+  var instances = M.Dropdown.init(elems, {});
+});
+
+document
+  .getElementById("deleteCheckbox")
+  .addEventListener("change", function () {
+    if (this.checked) {
+      setTimeout(() => {
+        document.getElementById("deleteForm").submit();
+      }, 200);
+    }
+  });
