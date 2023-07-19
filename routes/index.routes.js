@@ -10,19 +10,26 @@ const TodoItem = require("../models/Todo.model");
 //require middleware
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
-/* GET home page */
+/* GET dashboard page */
 router.get("/", (req, res, next) => {
+  const currentUser = req.session.currentUser;
   if (req.session.currentUser) {
     // User is logged in
-    res.render("index", { isLoggedIn: true });
+    res.render("index", {
+      isLoggedIn: true,
+      userInSession: req.session.currentUser,
+    });
   } else {
     // User is logged out
-    res.render("index", { isLoggedIn: false });
+    res.render("index", {
+      isLoggedIn: false,
+      userInSession: req.session.currentUser,
+    });
   }
 });
 
 //GET user profile
-router.get("/userProfile", isLoggedIn, async (req, res, next) => {
+router.get("/dashboard", isLoggedIn, async (req, res, next) => {
   try {
     const currentUser = req.session.currentUser;
 
@@ -30,7 +37,7 @@ router.get("/userProfile", isLoggedIn, async (req, res, next) => {
     const dailyHabits = await DailyHabit.find({ user: currentUser._id });
     const todoItems = await TodoItem.find({ user: currentUser._id });
 
-    res.render("users/user-profile", {
+    res.render("users/dashboard", {
       userInSession: req.session.currentUser,
       habitList,
       dailyHabits,
@@ -41,7 +48,6 @@ router.get("/userProfile", isLoggedIn, async (req, res, next) => {
     res.status(500).send("Internal Server Error");
   }
 });
-
 
 //GET account
 router.get("/account", isLoggedIn, async (req, res, next) => {
@@ -108,7 +114,7 @@ router.post("/account/:id/delete", isLoggedIn, async (req, res, next) => {
     });
   } catch (error) {
     console.log("There has been an error: ", error);
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   }
 });
 

@@ -6,7 +6,7 @@
       <div id="add-habit-modal" class="modal">
         <div class="modal-content">
           <h4>Add a Habit</h4>
-          <form action="/userProfile/habits/create" method="POST">
+          <form action="/dashboard/habits/create" method="POST">
             <label>
               <input type="text" name="name" placeholder="Add a habit" />
             </label>
@@ -51,7 +51,7 @@
           <ul id="dropdown1" class="dropdown-content">
             <li>
               <form
-                action="/userProfile/habits/<%= habit._id %>/delete"
+                action="/dashboard/habits/<%= habit._id %>/delete"
                 method="POST"
               >
                 <button type="submit">
@@ -62,7 +62,7 @@
             <li class="divider" tabindex="-1"></li>
             <li>
               <form
-                action="/userProfile/habits/<%= habit._id %>/edit"
+                action="/dashboard/habits/<%= habit._id %>/edit"
                 method="GET"
               >
                 <button type="submit">
@@ -92,18 +92,15 @@
       <div id="add-daily-modal" class="modal">
         <div class="modal-content">
           <h4>Add Daily</h4>
-          <form action="/userProfile/daily/create" method="POST">
+          <form action="/dashboard/daily/create" method="POST">
             <label>
               <input type="text" name="name" placeholder="Add a Daily" />
             </label>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
+            <a href="#!" class="modal-close btn-flat modal-btn"
+              ><span class="modal-btn no-capitalization">Cancel</span></a
             >
-            <button
-              type="submit"
-              class="modal-close waves-effect waves-light btn"
-            >
-              Add
+            <button type="submit" class="modal-close btn-flat">
+              <span class="modal-btn no-capitalization">Add Daily</span>
             </button>
           </form>
         </div>
@@ -126,10 +123,7 @@
         <% dailyHabits.forEach(daily => { %>
         <div class="daily-item">
           <div class="daily-name">
-            <form
-              action="/userProfile/daily/<%= daily._id %>/edit"
-              method="GET"
-            >
+            <form action="/dashboard/daily/<%= daily._id %>/edit" method="GET">
               <button type="submit">
                 <i class="material-icons tiny">edit</i>
               </button>
@@ -138,7 +132,7 @@
           </div>
           <form
             id="deleteForm"
-            action="/userProfile/daily/<%= daily._id %>/delete"
+            action="/dashboard/daily/<%= daily._id %>/delete"
             method="POST"
           >
             <label>
@@ -166,12 +160,16 @@
       <div id="add-todo-modal" class="modal">
         <div class="modal-content">
           <h4>Add To Do</h4>
-          <form action="/userProfile/todo/create" method="POST">
+          <form action="/dashboard/todo/create" method="POST">
             <label>
               <input type="text" name="name" placeholder="Add a To Do" />
             </label>
-            <a href="#!" class="modal-close btn-flat">Cancel</a>
-            <button type="submit" class="modal-close btn-flat">Add</button>
+            <a href="#!" class="modal-close btn-flat modal-btn"
+              ><span class="modal-btn no-capitalization">Cancel</span></a
+            >
+            <button type="submit" class="modal-close btn-flat">
+              <span class="modal-btn no-capitalization">Add a To Do</span>
+            </button>
           </form>
         </div>
       </div>
@@ -191,7 +189,7 @@
       <div class="todo-content">
         <% todoItems.forEach(item => { %>
         <div class="todo-item">
-          <form action="/userProfile/todo/<%= item._id %>/delete" method="POST">
+          <form action="/dashboard/todo/<%= item._id %>/delete" method="POST">
             <button type="submit">
               <img
                 src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
@@ -201,7 +199,7 @@
             </button>
           </form>
           <p><%= item.name %></p>
-          <form action="/userProfile/todo/<%= item._id %>/edit" method="GET">
+          <form action="/dashboard/todo/<%= item._id %>/edit" method="GET">
             <button type="submit">
               <img
                 src="/images/icons8-edit-24.png"

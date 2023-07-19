@@ -14,7 +14,7 @@ router.post("/habits/create", isLoggedIn, async (req, res, next) => {
       name: name,
       user: currentUser._id,
     });
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -45,7 +45,7 @@ router.post("/habits/:id/edit", isLoggedIn, async (req, res, next) => {
       },
       { new: true }
     );
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -56,7 +56,7 @@ router.post("/habits/:id/delete", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   try {
     await Habit.findByIdAndDelete(id);
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -72,7 +72,7 @@ router.post("/daily/create", isLoggedIn, async (req, res, next) => {
       name: name,
       user: currentUser._id,
     });
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -102,7 +102,7 @@ router.post("/daily/:id/edit", isLoggedIn, async (req, res, next) => {
       },
       { new: true }
     );
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -113,7 +113,7 @@ router.post("/daily/:id/delete", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   try {
     await DailyHabit.findByIdAndDelete(id);
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -129,7 +129,7 @@ router.post("/todo/create", isLoggedIn, async (req, res, next) => {
       name: name,
       user: currentUser._id,
     });
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -159,7 +159,7 @@ router.post("/todo/:id/edit", isLoggedIn, async (req, res, next) => {
       },
       { new: true }
     );
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
@@ -170,7 +170,7 @@ router.post("/todo/:id/delete", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   try {
     await TodoItem.findByIdAndDelete(id);
-    res.redirect("/userProfile");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log("There has been an error: ", error);
   }
