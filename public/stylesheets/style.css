@@ -48,7 +48,7 @@ body {
   height: 11.378px;
   position: absolute;
   bottom: 15px;
-  right: 180px;
+  right: 120px;
 }
 
 #home .left h1 span {
@@ -323,25 +323,107 @@ nav {
 
 nav a {
   color: #1b1c17;
-  font-family: "Rubik One", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
   margin-left: 30px;
+  font-weight: bold;
 }
 
-nav ul a {
-  padding: 0;
-  margin-right: 30px;
-  width: 40px;
-  height: 40px;
+nav p {
+  color: #1b1c17;
+  font-weight: bold;
 }
 
-nav img {
-  margin-top: 10px;
+.sidenav {
+  width: 400px !important;
+  gap: 20px;
+  border-radius: 16px 0px 0px 16px;
+}
+
+.sidenav-trigger img {
+  position: absolute;
+  top: 2.1%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 999;
   margin-right: 30px;
-  width: 40px;
-  height: 40px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.sidenav .background {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 100px;
+  margin-bottom: 30px;
+}
+
+.sidenav .options {
+  display: flex;
+  margin-top: 100px;
+  padding: 0px 8px;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidenav .profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.sidenav .friends {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.sidenav .settings {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.sidenav .support {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.sidenav .logout {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+.sidenav .logout button {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  line-height: 48px;
+  margin-left: 25px;
+  cursor: pointer;
 }
 
 /* Main page */
@@ -444,6 +526,57 @@ nav img {
   justify-content: center;
   align-items: center;
 }
+
+/*Profile*/
+.accountButton,
+.btn.btn-primary {
+  display: inline-block;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.accountButton {
+  background-color: #78f8de;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.accountButton:hover {
+  background-color: #624bbc;
+}
+
+.btn.btn-primary {
+  margin-top: 10px;
+  padding-bottom: 10px;
+  background-color: #624bbc;
+  width: 260px;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  height: 100vh;
+  background-color: #fbf9f1;
+}
+
+.account-container img {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.account-container .user-info {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
 /* Mobile */
 @media (max-width: 767px) {
   #login-container .left,

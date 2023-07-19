@@ -1,17 +1,65 @@
-<!-- Dropdown Structure -->
-<nav>
-    <a>Trackify</a>
-    <ul class="right hide-on-med-and-down">
-      <!-- Dropdown Trigger -->
-      <li><a href="#!"><img src="/images/userProfile.png" alt="Profile Picture" class="dropdown-trigger" data-target="dropdown1"></a></li>
-    </ul>
+<!-- Navbar -->
+<nav style="background-color: #fbf9f1">
+  <div class="nav-wrapper">
+    <a style="color: #1b1c17" class="brand-logo">Trackify.</a>
+    <p class="right" style="margin-right: 100px">
+      <%= userInSession.username %>
+    </p>
+  </div>
 </nav>
+<a href="#" data-target="slide-out" class="sidenav-trigger"
+  ><i class="material-icons"
+    ><img src="<%- userInSession.image %>" alt="Profile Picture" /></i
+></a>
 
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="/account">Edit Profile</a></li>
-  <li><a href="#!">Friends</a></li>
-  <li><a href="#!">Settings</a></li>
-  <li><a href="#!">Support</a></li>
-  <li><a href="/logout">Logout</a></li>
+<!-- Sidenav -->
+<ul id="slide-out" class="sidenav" style="background-color: #fbf9f1">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <p
+          style="
+            margin-right: 15px;
+            margin-left: 10px;
+            color: #1b1c17;
+            font-weight: bold;
+          "
+        >
+          <%= userInSession.username %>
+        </p>
+        <a style="margin-right: 120px" href="#user"
+          ><img class="circle" src="<%- userInSession.image %>"
+        /></a>
+        <a href="#" class="sidenav-close">
+          <i style="color: #1b1c17; margin-top: 25px" class="material-icons"
+            >close</i
+          >
+        </a>
+      </div>
+    </div>
+  </li>
+  <div class="options">
+    <div class="profile">
+      <img src="/images/person.png" alt="" />
+      <li><a href="/account">Profile</a></li>
+    </div>
+    <div class="friends">
+      <img src="/images/Group.png" alt="" />
+      <li><a href="#!">Friends</a></li>
+    </div>
+    <div class="settings">
+      <img src="/images/Settings.png" alt="" />
+      <li><a href="#!">Settings</a></li>
+    </div>
+    <div class="support">
+      <img src="/images/Support.png" alt="" />
+      <li><a href="#!">Support</a></li>
+    </div>
+    <div class="logout">
+      <img src="/images/Logout.png" alt="" />
+      <form action="/logout" method="POST">
+        <button type="submit">Log Out</button>
+      </form>
+    </div>
+  </div>
 </ul>

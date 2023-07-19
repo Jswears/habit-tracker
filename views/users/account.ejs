@@ -1,14 +1,32 @@
 <div class="account-container">
-  <img src="/images/Trackify.png" alt="Logo">
-  <div>
-    <% changes.forEach(user => { %>
-    <img src=<%- user.image %> alt="image">
-    <form action="/account/<%= user._id %>/delete" method="POST">
-      <button class="accountButton" type="submit">Delete Account</button>
-    </form>
-
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='/account/<%= user._id %>/edit'">Update Account</button>
-
-    <% }) %>
+  <% changes.forEach(user => { %>
+  <a href="/userProfile">
+    <img
+      style="border-radius: 50%; width: 300px; height: 300px"
+      src="<%- user.image %>"
+      alt="image"
+    />
+  </a>
+  <hr />
+  <!-- <form
+    class="col s12"
+    action="/account/<%= user._id %>/delete"
+    method="POST"
+  ></form> -->
+  <div class="user-info">
+    <p>Username: <%= userInSession.username %></p>
+    <br />
+    <p>Email: <%= userInSession.email %></p>
   </div>
+  <form action="/account/<%= user._id %>/delete" method="POST">
+    <button class="accountButton" type="submit">Delete Account</button>
+  </form>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location.href='/account/<%= user._id %>/edit'"
+  >
+    Update Account
+  </button>
+  <% }) %>
 </div>
