@@ -32,6 +32,7 @@
               id="username"
               class="validate text-field"
               required
+              oninput="onUsernameChange()"
             />
             <label for="username">Username</label>
           </div>
@@ -45,6 +46,7 @@
               id="email"
               class="validate text-field"
               required
+              oninput="onEmailChange()"
             />
             <label for="email">Email</label>
           </div>
@@ -58,6 +60,8 @@
               id="password"
               class="validate text-field"
               required
+              class="validate"
+              oninput="onPasswordChange()"
             />
             <label for="password">Password</label>
           </div>
@@ -85,7 +89,13 @@
         <% } %>
         <p>
           <label>
-            <input type="checkbox" required />
+            <input
+              id="terms"
+              name="terms"
+              type="checkbox"
+              required
+              oninput="onTermsChange()"
+            />
             <span
               >I have read and agree to the Terms of Service and Privacy
               Policy</span
@@ -97,7 +107,8 @@
           class="btn waves-effect waves-light"
           type="submit"
           name="action"
-          id="home-btn"
+          id="create-account-btn"
+          disabled
         >
           Create an Account
         </button>
@@ -106,3 +117,110 @@
     </div>
   </div>
 </div>
+
+<script>
+  const formRules = {
+    required: (value) => {
+      if (value === "" || typeof value === "undefined" || value === null) {
+        return "This input is required";
+      }
+      return true;
+    },
+    password: (value) => {
+      const regex =
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+=[\]{}|\\:;"'<>,.?/]).{8,}$/;
+
+      const regexEvaluation = regex.test(value);
+
+      console.log(regexEvaluation);
+      if (!regexEvaluation) {
+        return "Check the password requirements";
+      }
+    },
+    email: (value) => {
+      const regex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+      if (!regex.test(value)) {
+        return "This is not a valid email";
+      }
+    },
+    equal: (value, valueToCompare) => {
+      if (value !== valueToCompare) {
+        return `This value must be ${valueToCompare}`;
+      }
+    },
+  };
+
+  const usernameInput = {
+    name: "username",
+    isValid: null,
+    rules: [formRules.required],
+  };
+
+  const emailInput = {
+    name: "email",
+    isValid: null,
+    rules: [formRules.required, formRules.email],
+  };
+
+  const passwordInput = {
+    name: "password",
+    isValid: null,
+    rules: [formRules.password],
+  };
+
+  const termsInput = {
+    name: "terms",
+    isValid: null,
+    rules: [(value) => formRules.equal(value, true)],
+  };
+
+  const checkRules = (rules, value) => {
+    let isValid = true;
+    rules.forEach((rule) => {
+      if (typeof rule(value) === "string") {
+        isValid = false;
+      }
+    });
+    return isValid;
+  };
+
+  const submitButtonToggle = (state) => {
+    const btn = document.getElementById("create-account-btn");
+    btn.disabled = !state;
+  };
+
+  const checkForm = () => {
+    const isFormValid =
+      usernameInput.isValid &&
+      emailInput.isValid &&
+      passwordInput.isValid &&
+      termsInput.isValid;
+    submitButtonToggle(isFormValid);
+    return isFormValid;
+  };
+
+  const onUsernameChange = () => {
+    const input = document.getElementById("username");
+    usernameInput.isValid = checkRules(usernameInput.rules, input.value);
+    checkForm();
+  };
+
+  const onEmailChange = () => {
+    const input = document.getElementById("email");
+    emailInput.isValid = checkRules(emailInput.rules, input.value);
+    checkForm();
+  };
+
+  const onPasswordChange = () => {
+    const input = document.getElementById("password");
+    passwordInput.isValid = checkRules(passwordInput.rules, input.value);
+    checkForm();
+    console.log(input.value);
+  };
+
+  const onTermsChange = () => {
+    const input = document.getElementById("terms");
+    termsInput.isValid = checkRules(termsInput.rules, input.checked);
+    checkForm();
+  };
+</script>

@@ -22,10 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document
   .getElementById("deleteCheckbox")
-  .addEventListener("change", function () {
+  ?.addEventListener("change", function () {
     if (this.checked) {
       setTimeout(() => {
         document.getElementById("deleteForm").submit();
       }, 200);
     }
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".tooltipped");
+  var instances = M.Tooltip.init(elems, {});
+});
