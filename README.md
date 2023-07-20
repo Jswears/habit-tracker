@@ -21,7 +21,6 @@ The Habit Tracker is an application designed to help users build and track their
 
 - **Points System**: Users can earn points when completing habits, daily tasks, or to-dos, motivating them to stay consistent.
 - **Habit Reset**: Habit completion status resets daily, allowing users to continue tracking their habits regularly.
-- (Add more backlog functionalities as you plan to implement them.)
 
 ## Technologies Used
 
