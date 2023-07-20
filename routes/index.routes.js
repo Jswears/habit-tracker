@@ -14,17 +14,10 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 router.get("/", (req, res, next) => {
   const currentUser = req.session.currentUser;
   if (req.session.currentUser) {
-    // User is logged in
-    res.render("index", {
-      isLoggedIn: true,
-      userInSession: req.session.currentUser,
-    });
+    res.redirect("/dashboard");
   } else {
     // User is logged out
-    res.render("index", {
-      isLoggedIn: false,
-      userInSession: req.session.currentUser,
-    });
+    res.render("index", { userInSession: req.session.currentUser });
   }
 });
 

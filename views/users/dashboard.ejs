@@ -26,10 +26,12 @@
       <% if (habitList.length === 0) { %>
       <div class="cards-content">
         <img src="images/habit-img.png" alt="Rollerskating" />
-        <h4>No habits</h4>
-        <p>
-          Here you will find your habits. To add one, click on ‘add a habit’
-        </p>
+        <div class="cards-text">
+          <h4>No habits</h4>
+          <p>
+            Here you will find your habits. To add one, click on ‘add a habit’
+          </p>
+        </div>
       </div>
       <% } else { %>
 
@@ -78,7 +80,7 @@
       <div class="card-btn">
         <button
           data-target="add-habit-modal"
-          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3 no-capitalization"
         >
           + Add Habit
         </button>
@@ -110,10 +112,13 @@
       <% if (dailyHabits.length === 0) { %>
       <div class="cards-content">
         <img src="images/daily-img.png" alt="Taking rubbish out" />
-        <h4>No Tasks</h4>
-        <p>
-          Here you will find your daily tasks. To add one, click on ‘add a task’
-        </p>
+        <div class="cards-text">
+          <h4>No Tasks</h4>
+          <p>
+            Here you will find your daily tasks. To add one, click on ‘add a
+            task’
+          </p>
+        </div>
       </div>
       <% } else { %>
       <!-- Daily Habits List -->
@@ -146,7 +151,7 @@
       <div class="card-btn">
         <button
           data-target="add-daily-modal"
-          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3 no-capitalization"
         >
           + Add Daily
         </button>
@@ -177,10 +182,13 @@
       <% if (todoItems.length ===0) { %>
       <div class="cards-content">
         <img src="images/todo-img.png" alt="Person with a todo list" />
-        <h4>No to do's</h4>
-        <p>
-          Here you will find your to do list. To add one, click on ‘add a task’
-        </p>
+        <div class="cards-text">
+          <h4>No to do's</h4>
+          <p>
+            Here you will find your to do list. To add one, click on ‘add a
+            task’
+          </p>
+        </div>
       </div>
       <% } else { %>
       <!-- To Do Items List -->
@@ -215,7 +223,7 @@
       <div class="card-btn">
         <button
           data-target="add-todo-modal"
-          class="waves-effect waves-light btn modal-trigger indigo lighten-3"
+          class="waves-effect waves-light btn modal-trigger indigo lighten-3 no-capitalization"
         >
           + Add To Do
         </button>
