@@ -1,6 +1,6 @@
 # Habit Tracker - README
 
-![Habit Tracker Logo](/images/favicon-32x32.png)
+![Habit Tracker Logo](./public/images/favicon-32x32.png)
 
 ## Description
 
