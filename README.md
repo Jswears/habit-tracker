@@ -1,6 +1,6 @@
 # Habit Tracker - README
 
-![Habit Tracker Logo](/images/favicon-32x32.png)
+![Habit Tracker Logo](./public/images/favicon-32x32.png)
 
 ## Description
 
@@ -28,6 +28,7 @@ The Habit Tracker is an application designed to help users build and track their
 The Habit Tracker is built using the following technologies:
 
 - **EJS**: Templating engine to generate dynamic HTML content.
+- **Materialize**: A modern responsive front-end framework based on Material Design.
 - **CSS**: Styling the user interface and improving the overall user experience.
 - **JavaScript**: Enhancing the interactivity and functionality of the application.
 - **Node.js**: Backend JavaScript runtime for running the server.

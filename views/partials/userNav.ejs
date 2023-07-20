@@ -2,14 +2,12 @@
 <nav style="background-color: #fbf9f1">
   <div class="nav-wrapper">
     <a style="color: #1b1c17" class="brand-logo">Trackify.</a>
-    <p class="right" style="margin-right: 100px">
-      <%= userInSession.username %>
-    </p>
+    <p class="right" style="margin-right: 100px"><%= changes.username %></p>
   </div>
 </nav>
 <a href="#" data-target="slide-out" class="sidenav-trigger"
   ><i class="material-icons"
-    ><img src="<%- userInSession.image %>" alt="Profile Picture" /></i
+    ><img src="<%- changes.image %>" alt="Profile Picture" /></i
 ></a>
 
 <!-- Sidenav -->
@@ -25,10 +23,10 @@
             font-weight: bold;
           "
         >
-          <%= userInSession.username %>
+          <%= changes.username %>
         </p>
         <a style="margin-right: 120px" href="#user"
-          ><img class="circle" src="<%- userInSession.image %>"
+          ><img class="circle" src="<%- changes.image %>"
         /></a>
         <a href="#" class="sidenav-close">
           <i style="color: #1b1c17; margin-top: 25px" class="material-icons"

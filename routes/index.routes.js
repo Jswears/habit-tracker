@@ -15,16 +15,19 @@ const TodoItem = require("../models/Todo.model");
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 /* GET signup page */
-router.get("/", (req, res, next) => {
+router.get("/", async (req, res, next) => {
   const currentUser = req.session.currentUser;
   if (req.session.currentUser) {
     res.redirect("/dashboard");
   } else {
-    // User is logged out
-    res.render("index", {
-      userInSession: req.session.currentUser,
-      errorMessage: null,
-    });
+    try {
+      res.render("index", {
+        userInSession: req.session.currentUser,
+        errorMessage: null,
+      });
+    } catch (error) {
+      console.log("There has been an error: ", error);
+    }
   }
 });
 
@@ -36,6 +39,7 @@ router.post(
   async (req, res, next) => {
     // Retrieve form data from request body
     const { username, email, password } = req.body;
+    
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
     const image = req.file.path;
     console.log("username");
@@ -89,6 +93,7 @@ router.get("/dashboard", isLoggedIn, async (req, res, next) => {
   try {
     const currentUser = req.session.currentUser;
 
+    const changes = await User.findOne({ _id: currentUser._id });
     const habitList = await Habit.find({ user: currentUser._id });
     const dailyHabits = await DailyHabit.find({ user: currentUser._id });
     const todoItems = await TodoItem.find({ user: currentUser._id });
@@ -98,6 +103,7 @@ router.get("/dashboard", isLoggedIn, async (req, res, next) => {
       habitList,
       dailyHabits,
       todoItems,
+      changes,
     });
   } catch (error) {
     console.log("There has been an error: ", error);
@@ -142,7 +148,7 @@ router.post("/account/:id/edit", isLoggedIn, async (req, res, next) => {
   }
 
   try {
-    const updatedAccount = await User.findByIdAndUpdate(
+    await User.findByIdAndUpdate(
       id,
       {
         username: username,
@@ -151,7 +157,14 @@ router.post("/account/:id/edit", isLoggedIn, async (req, res, next) => {
       },
       { new: true }
     );
-    res.redirect("/account");
+    req.session.reload((err) => {
+      if (err) {
+        console.log("Error reloading session:", err);
+      }
+
+      // Redirect to the account page
+      res.redirect("/account");
+    });
   } catch (error) {
     console.log("There has been an error: ", error);
     res.status(500).send("Internal Server Error");
