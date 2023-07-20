@@ -545,6 +545,13 @@ nav p {
   font-weight: bold;
 }
 
+.account-container .small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
 .accountButton {
   background-color: #78f8de;
   padding: 10px 20px;
