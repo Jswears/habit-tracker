@@ -545,6 +545,13 @@ nav p {
   font-weight: bold;
 }
 
+.account-container .small {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
 .accountButton {
   background-color: #78f8de;
   padding: 10px 20px;
@@ -687,6 +694,33 @@ nav p {
   height: 600px;
 }
 
+/* Update Habit - Daily - To Do List */
+.update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  color: #1b1c17;
+  background-color: #fbf9f1;
+  height: 100vh;
+  margin-bottom: 100px;
+}
+
+.update-container .universal h2 {
+  font-weight: bold;
+}
+
+.update-container .universal input {
+  width: 500px; 
+}
+
+.update-container .universal button {
+ width: 500px;
+ margin-top: 30px;
+  margin-bottom: 200px;
+}
 
 /* Mobile */
 @media (max-width: 767px) {
