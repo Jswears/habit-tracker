@@ -42,7 +42,6 @@ The Habit Tracker is built using the following technologies:
 
 - `GET /login`: Renders the login page.
 - `POST /login`: Handles the login form submission.
-- (Add more auth routes as needed.)
 
 ### Habits Routes
 
@@ -50,7 +49,6 @@ The Habit Tracker is built using the following technologies:
 - `GET /habits/:id/edit`: Renders the edit page for a specific habit.
 - `POST /habits/:id/edit`: Handles the submission of edited habit details.
 - `POST /habits/:id/delete`: Deletes a habit.
-- (Add more habits routes as needed.)
 
 ### Daily Routes
 
@@ -58,7 +56,6 @@ The Habit Tracker is built using the following technologies:
 - `GET /daily/:id/edit`: Renders the edit page for a specific daily task.
 - `POST /daily/:id/edit`: Handles the submission of edited daily task details.
 - `POST /daily/:id/delete`: Deletes a daily task.
-- (Add more daily routes as needed.)
 
 ### To-Do Routes
 
@@ -66,7 +63,6 @@ The Habit Tracker is built using the following technologies:
 - `GET /todo/:id/edit`: Renders the edit page for a specific to-do task.
 - `POST /todo/:id/edit`: Handles the submission of edited to-do task details.
 - `POST /todo/:id/delete`: Deletes a to-do task.
-- (Add more to-do routes as needed.)
 
 ### Index Routes
 
