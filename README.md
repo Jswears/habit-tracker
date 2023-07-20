@@ -97,7 +97,7 @@ The Habit Tracker is built using the following technologies:
 - `name`: String
 - `user`: References the User model (Schema.Types.ObjectId)
 
-### User Model
+User Model
 
 - `username`: String (required, unique)
 - `email`: String (required, unique)
@@ -105,5 +105,20 @@ The Habit Tracker is built using the following technologies:
 - `habits`: Array of References to Habits model (Schema.Types.ObjectId)
 - `image`: String (optional)
 - `timestamps`: CreatedAt and UpdatedAt timestamps
+
+## Links
+
+- **Project**:
+
+  - [Repository Link](https://github.com/Jswears/habit-tracker)
+  - [Deploy Link](https://habit-tracker.adaptable.app/)
+
+- [Trello](https://trello.com/b/L11pJpO0/trackify)
+
+- **Slides**: COMING SOON
+
+## Collaborators
+
+- [Brian](https://github.com/brianadams68)
 
 ---
