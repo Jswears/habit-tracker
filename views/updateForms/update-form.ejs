@@ -1,29 +1,35 @@
-<!-- Habit -->
-<div class="container">
-  <% if (typeof foundHabit !== 'undefined') { %>
-  <h2>Update your habit</h2>
-  <form action="/dashboard/habits/<%= foundHabit._id %>/edit" method="post">
-    <label for="name" class="form-label">Habit</label>
-    <input type="text" id="name" name="name" value="<%= foundHabit.name %>" />
-    <button type="submit" class="btn btn-primary">Update Habit</button>
-  </form>
+<div class="update-container">
+  <!-- Habit -->
+  <div class="universal">
+    <% if (typeof foundHabit !== 'undefined') { %>
+    <h2>Update your Habit</h2>
+    <form action="/dashboard/habits/<%= foundHabit._id %>/edit" method="post">
+      <label for="name" class="form-label">Habit</label>
+      <input type="text" id="name" name="name" value="<%= foundHabit.name %>" />
+      <button type="submit" class="btn btn-primary">Update Habit</button>
+    </form>
+  </div>
 
-  <!-- DAily -->
-  <% } else if (typeof foundDaily !== 'undefined') { %>
-  <h2>Update your Daily</h2>
-  <form action="/dashboard/daily/<%= foundDaily._id %>/edit" method="post">
-    <label for="name" class="form-label">Daily</label>
-    <input type="text" id="name" name="name" value="<%= foundDaily.name %>" />
-    <button type="submit" class="btn btn-primary">Update Daily</button>
-  </form>
+  <!-- Daily -->
+  <div class="universal">
+    <% } else if (typeof foundDaily !== 'undefined') { %>
+    <h2>Update your Daily</h2>
+    <form action="/dashboard/daily/<%= foundDaily._id %>/edit" method="post">
+      <label for="name" class="form-label">Daily</label>
+      <input type="text" id="name" name="name" value="<%= foundDaily.name %>" />
+      <button type="submit" class="btn btn-primary">Update Daily</button>
+    </form>
+  </div>
 
   <!-- To Do List -->
-  <% } else if (typeof foundTodo !== 'undefined') { %>
-  <h2>Update your Todo List</h2>
-  <form action="/dashboard/todo/<%= foundTodo._id %>/edit" method="post">
-    <label for="name" class="form-label">Todo</label>
-    <input type="text" id="name" name="name" value="<%= foundTodo.name %>" />
-    <button type="submit" class="btn btn-primary">Update Todo</button>
-  </form>
+  <div class="universal">
+    <% } else if (typeof foundTodo !== 'undefined') { %>
+    <h2>Update your Todo List</h2>
+    <form action="/dashboard/todo/<%= foundTodo._id %>/edit" method="post">
+      <label for="name" class="form-label">Todo</label>
+      <input type="text" id="name" name="name" value="<%= foundTodo.name %>" />
+      <button type="submit" class="btn btn-primary">Update Todo</button>
+    </form>
+  </div>
   <% } %>
 </div>

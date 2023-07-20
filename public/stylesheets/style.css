@@ -694,6 +694,33 @@ nav p {
   height: 600px;
 }
 
+/* Update Habit - Daily - To Do List */
+.update-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  color: #1b1c17;
+  background-color: #fbf9f1;
+  height: 100vh;
+  margin-bottom: 100px;
+}
+
+.update-container .universal h2 {
+  font-weight: bold;
+}
+
+.update-container .universal input {
+  width: 500px; 
+}
+
+.update-container .universal button {
+ width: 500px;
+ margin-top: 30px;
+  margin-bottom: 200px;
+}
 
 /* Mobile */
 @media (max-width: 767px) {
