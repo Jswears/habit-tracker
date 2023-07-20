@@ -216,11 +216,11 @@ body {
   font-weight: bold;
 }
 
-.underline {
+#login-container .underline {
   position: relative;
 }
 
-.underline::after {
+#login-container .underline::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -524,6 +524,16 @@ nav p {
   align-items: center;
 }
 
+/* Custom dropdown arrow icon color */
+.habit-item .dropdown-trigger .material-icons {
+  color: #000;
+}
+
+/* Custom dropdown arrow icon size */
+.habit-item .dropdown-trigger .material-icons {
+  font-size: 24px;
+}
+
 /*Profile*/
 .accountButton,
 .btn.btn-primary {
@@ -573,6 +583,110 @@ nav p {
   margin-top: 20px;
   font-size: 18px;
 }
+
+/* Update Account Left*/
+#lastPage {
+  display: flex;
+  align-items: center;
+}
+
+#lastPage .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #fbf9f1;
+}
+
+#lastPage .container {
+  width: 500px;
+  height: 138px;
+  color: #1b1c17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+#lastPage .left a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+#lastPage h2 {
+  font-family: "Rubik One", sans-serif;
+  font-weight: bold;
+  color: #1b1c17;
+}
+
+#lastPage .left form {
+  margin: 40px;
+}
+
+#lastPage .left input {
+  width: 500px;
+  height: 45px;
+}
+
+#lastPage .left button {
+  border-radius: 100px;
+  width: 500px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+  margin-top: 40px;
+}
+
+/* Update Account Right */
+#lastPage .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+#accountRight h1 {
+  color: #624bbc;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-weight: bold;
+}
+
+#accountRight .underline {
+  position: relative;
+}
+
+#accountRight .underline::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 24px;
+  bottom: -10px;
+  right: 30px;
+  background-image: url("../images/Lines.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+#accountRight img {
+  width: 600px;
+  height: 600px;
+}
+
 
 /* Mobile */
 @media (max-width: 767px) {

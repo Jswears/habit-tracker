@@ -22,9 +22,7 @@
       <div class="card-title">
         <h3>Habits</h3>
       </div>
-      <!-- <form action="/logout" method="POST">
-          <button type="submit">L</button>
-        </form> -->
+
       <% if (habitList.length === 0) { %>
       <div class="cards-content">
         <img src="images/habit-img.png" alt="Rollerskating" />
@@ -44,7 +42,7 @@
         <div class="habit-item">
           <p><%= habit.name %></p>
           <a class="dropdown-trigger" href="#" data-target="dropdown1"
-            ><i class="material-icons" style="color: #000">arrow_right</i></a
+            ><i class="material-icons">arrow_right</i></a
           >
 
           <!-- Dropdown Structure -->
@@ -55,7 +53,7 @@
                 method="POST"
               >
                 <button type="submit">
-                  <i class="material-icons" style="color: #000">delete</i>
+                  <i class="material-icons">delete</i>
                 </button>
               </form>
             </li>
@@ -66,7 +64,7 @@
                 method="GET"
               >
                 <button type="submit">
-                  <i class="material-icons" color="#000">edit</i>
+                  <i class="material-icons">edit</i>
                 </button>
               </form>
             </li>
