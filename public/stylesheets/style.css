@@ -466,6 +466,7 @@ nav p {
 
 .cards-content {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -513,7 +514,7 @@ nav p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 680px;
+  height: 650px;
 }
 
 .todo-item,
@@ -741,18 +742,31 @@ nav p {
   margin-bottom: 100px;
 }
 
+.universal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 200px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 19px 40px;
+}
+
 .update-container .universal h2 {
   font-weight: bold;
 }
 
 .update-container .universal input {
-  width: 500px; 
+  width: 500px;
 }
 
 .update-container .universal button {
- width: 500px;
- margin-top: 30px;
-  margin-bottom: 200px;
+  width: 500px;
+  margin-top: 30px;
+}
+
+.update-container .universal label {
+  font-size: 20px;
 }
 
 /* Mobile */
@@ -766,10 +780,16 @@ nav p {
     max-width: 300px;
   }
 
+  #home .right {
+    margin-top: 35px;
+  }
+
   #home .right .btn {
     max-width: 300px;
   }
-
+  .login-btn-section button {
+    max-width: 300px;
+  }
   .login-slogan,
   #home .right .accountLogan {
     max-width: 300px;
@@ -795,7 +815,12 @@ nav p {
   }
 
   .accountLogan p {
-    margin-bottom: 70px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  #home .right h2 {
+    font-size: 30px;
   }
 
   body {
@@ -828,8 +853,15 @@ nav p {
     max-height: 300px;
   }
 
+  .sidenav {
+    width: 200px !important;
+  }
+
   .sidenav-trigger img {
-    display: none;
+    width: 35px;
+    height: 35px;
+    top: 25px;
+    right: -20px;
   }
   .nav-wrapper p {
     display: none;
@@ -838,4 +870,55 @@ nav p {
   nav .brand-logo {
     margin-left: 0;
   }
+
+  .universal {
+    max-width: 300px;
+    padding: 20px;
+  }
+  .universal h2 {
+    max-width: 300px;
+    font-size: 32px;
+  }
+  .universal input {
+    max-width: 250px;
+  }
+  .universal button {
+    max-width: 250px;
+  }
+  .universal i {
+    position: relative;
+    left: 130px;
+    bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .universal i:active {
+    transform: translateY(4px);
+  }
+
+  #lastPage #accountRight {
+    display: none;
+  }
+
+  #lastPage .left {
+    max-width: 400px;
+  }
+  .left .container,
+  .left .container input,
+  .left .container button {
+    max-width: 300px;
+  }
+  .error-message {
+    max-width: 300px;
+  }
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 499px;
 }

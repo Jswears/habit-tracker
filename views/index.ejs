@@ -20,7 +20,7 @@
       </div>
       <form
         class="col s12 formHome"
-        action="/auth/signup"
+        action="/"
         method="POST"
         enctype="multipart/form-data"
       >
@@ -79,7 +79,10 @@
             </div>
           </div>
         </div>
-
+        <!-- Add the error message placeholder -->
+        <% if (errorMessage) { %>
+        <p class="error-message"><%= errorMessage %></p>
+        <% } %>
         <p>
           <label>
             <input type="checkbox" required />
