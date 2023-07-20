@@ -216,11 +216,11 @@ body {
   font-weight: bold;
 }
 
-.underline {
+#login-container .underline {
   position: relative;
 }
 
-.underline::after {
+#login-container .underline::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -319,6 +319,7 @@ body {
 nav {
   margin: 0;
   background: #fbf9f1;
+  margin-bottom: 60px;
 }
 
 nav a {
@@ -435,10 +436,6 @@ nav p {
   flex-wrap: wrap;
 }
 
-.modal-content h4 {
-  font-size: 24px;
-}
-
 .habit-section,
 .daily-section,
 .todo-section {
@@ -482,7 +479,7 @@ nav p {
 .modal-btn {
   color: #624bbc;
   font-size: 14px;
-  font-weight: 400px;
+  font-weight: 700;
 }
 
 .no-capitalization {
@@ -493,7 +490,7 @@ nav p {
 #add-daily-modal,
 #add-todo-modal {
   width: 312px;
-  height: 272px;
+  height: 220px;
   border-radius: 28px;
 }
 
@@ -525,6 +522,16 @@ nav p {
   gap: 10px;
   justify-content: center;
   align-items: center;
+}
+
+/* Custom dropdown arrow icon color */
+.habit-item .dropdown-trigger .material-icons {
+  color: #000;
+}
+
+/* Custom dropdown arrow icon size */
+.habit-item .dropdown-trigger .material-icons {
+  font-size: 24px;
 }
 
 /*Profile*/
@@ -577,6 +584,110 @@ nav p {
   font-size: 18px;
 }
 
+/* Update Account Left*/
+#lastPage {
+  display: flex;
+  align-items: center;
+}
+
+#lastPage .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #fbf9f1;
+}
+
+#lastPage .container {
+  width: 500px;
+  height: 138px;
+  color: #1b1c17;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 5px;
+  margin: auto;
+  text-align: center;
+}
+
+#lastPage .left a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+#lastPage h2 {
+  font-family: "Rubik One", sans-serif;
+  font-weight: bold;
+  color: #1b1c17;
+}
+
+#lastPage .left form {
+  margin: 40px;
+}
+
+#lastPage .left input {
+  width: 500px;
+  height: 45px;
+}
+
+#lastPage .left button {
+  border-radius: 100px;
+  width: 500px;
+  background: var(--m-3-sys-light-primary, #624bbc);
+  margin-top: 40px;
+}
+
+/* Update Account Right */
+#lastPage .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+#accountRight h1 {
+  color: #624bbc;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-weight: bold;
+}
+
+#accountRight .underline {
+  position: relative;
+}
+
+#accountRight .underline::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 24px;
+  bottom: -10px;
+  right: 30px;
+  background-image: url("../images/Lines.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+}
+
+#accountRight img {
+  width: 600px;
+  height: 600px;
+}
+
+
 /* Mobile */
 @media (max-width: 767px) {
   #login-container .left,
@@ -623,5 +734,41 @@ nav p {
   body {
     background-color: #fbf9f1;
     margin: auto;
+  }
+
+  .habit-section,
+  .daily-section,
+  .todo-section {
+    max-width: 300px;
+    max-height: 500px;
+  }
+  .cards-content {
+    max-height: 300px;
+    flex-wrap: wrap;
+  }
+
+  .habit-item,
+  .daily-item,
+  .todo-item {
+    max-width: 280px;
+    border: 1px solid #c9c4cf;
+    border-radius: 16px;
+  }
+
+  .habit-content,
+  .daily-content,
+  .todo-content {
+    max-height: 300px;
+  }
+
+  .sidenav-trigger img {
+    display: none;
+  }
+  .nav-wrapper p {
+    display: none;
+  }
+
+  nav .brand-logo {
+    margin-left: 0;
   }
 }

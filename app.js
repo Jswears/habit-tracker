@@ -29,7 +29,7 @@ const authRouter = require("./routes/auth.routes");
 app.use("/auth", authRouter);
 
 const habitsRouter = require("./routes/habits.routes");
-app.use("/userProfile", habitsRouter);
+app.use("/dashboard", habitsRouter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

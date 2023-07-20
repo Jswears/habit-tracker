@@ -1,18 +1,36 @@
-<div class="container">
-  <h2>Update Account</h2>
-  <form action="/account/<%= changes._id %>/edit" method="post">
-    <label for="username">Username
-      <input type="text" name="username" value="<%= changes.username %>" />
-    </label>
-    <label for="email">E-mail
-      <input type="email" name="email" value="<%= changes.email %>" />
-    </label>
-    <label for="password">Password
-      <input type="password" name="password" value="<%= changes.password %>" />
-    </label>
-    <label for="image">
-      <input type="file" name="image" accept="image/png, image/jpg" value="<%= changes.image%>" />
-    </label>
-    <button type="submit" class="btn btn-primary">Update Account!</button>
-  </form>
+<div id="lastPage">
+  <div class="left">
+    <a href="/account"
+      ><i class="small material-icons" style="color: #1b1c17">arrow_back</i></a
+    >
+    <div class="container">
+      <h2>Update Account</h2>
+      <form action="/account/<%= changes._id %>/edit" method="post">
+        <label for="username"
+          >Username
+          <input type="text" name="username" value="<%= changes.username %>" />
+        </label>
+        <label for="email"
+          >E-mail
+          <input type="email" name="email" value="<%= changes.email %>" />
+        </label>
+        <label for="password"
+          >Password
+          <input
+            type="password"
+            name="password"
+            value="<%= changes.password %>"
+          />
+        </label>
+        <button type="submit" class="btn btn-primary">Update Account!</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="accountRight" class="right">
+    <div class="slogan">
+      <h1 class="underline">Trackify</h1>
+    </div>
+    <img src="/images/homePic.png" alt="Image" width="200" />
+  </div>
 </div>
