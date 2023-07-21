@@ -31,6 +31,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// Default profile
 const defaultImagePath = "/images/user.png";
 
 router.post(
@@ -44,8 +45,6 @@ router.post(
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
 
     let image = req.file ? req.file.path : defaultImagePath;
-
-    console.log("username");
 
     // Make sure users fill all mandatory fields:
     if (!username || !email || !password) {

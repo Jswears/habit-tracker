@@ -788,7 +788,7 @@ nav p {
   }
 
   #home .right {
-    margin-top: 35px;
+    margin-top: 24px;
   }
 
   #home .right .btn {
@@ -927,6 +927,9 @@ nav p {
   .requirements-password {
     max-width: 300px;
   }
+  .error-message {
+    max-width: 300px;
+  }
 }
 
 .error-message {
@@ -936,5 +939,5 @@ nav p {
   border: 1px solid #f5c6cb;
   border-radius: 4px;
   margin-bottom: 10px;
-  width: 499px;
+  width: 500px;
 }
