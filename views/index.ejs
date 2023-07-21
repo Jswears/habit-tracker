@@ -34,7 +34,7 @@
               required
               oninput="onUsernameChange()"
             />
-            <label for="username">Username</label>
+            <label for="username">* Username</label>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
               required
               oninput="onEmailChange()"
             />
-            <label for="email">Email</label>
+            <label for="email">* Email</label>
           </div>
         </div>
 
@@ -63,20 +63,19 @@
               class="validate"
               oninput="onPasswordChange()"
             />
-            <label for="password">Password</label>
+            <label for="password">* Password</label>
           </div>
+          <p class="requirements-password">
+            Minimum 8 characters with at least 1 digit, 1 lowercase letter, 1
+            uppercase letter, and 1 special character
+          </p>
         </div>
 
         <div class="row">
           <div class="file-field input-field">
             <div class="btn">
               <span>Choose Image</span>
-              <input
-                type="file"
-                name="image"
-                accept="image/png, image/jpg"
-                required
-              />
+              <input type="file" name="image" accept="image/png, image/jpg" />
             </div>
             <div class="file-path-wrapper">
               <input class="file-path validate" type="text" />
@@ -97,7 +96,7 @@
               oninput="onTermsChange()"
             />
             <span
-              >I have read and agree to the Terms of Service and Privacy
+              >* I have read and agree to the Terms of Service and Privacy
               Policy</span
             >
           </label>
@@ -132,7 +131,6 @@
 
       const regexEvaluation = regex.test(value);
 
-      console.log(regexEvaluation);
       if (!regexEvaluation) {
         return "Check the password requirements";
       }
@@ -215,7 +213,6 @@
     const input = document.getElementById("password");
     passwordInput.isValid = checkRules(passwordInput.rules, input.value);
     checkForm();
-    console.log(input.value);
   };
 
   const onTermsChange = () => {

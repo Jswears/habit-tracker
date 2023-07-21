@@ -1,20 +1,28 @@
 <div class="account-container">
-  <% changes.forEach(user => { %>
-  <a href="/dashboard"><i class="small material-icons" style="color: #1b1c17">arrow_back</i></a>
+  <a href="/dashboard"
+    ><i class="small material-icons" style="color: #1b1c17">arrow_back</i></a
+  >
   <a href="/dashboard">
-    <img style="border-radius: 50%; width: 300px; height: 300px" src="<%- user.image %>" alt="image" />
+    <img
+      style="border-radius: 50%; width: 300px; height: 300px"
+      src="<%= changes.image.length === 0 ? '/images/user.png' : changes.image %>"
+      alt="image"
+    />
   </a>
   <hr />
   <div class="user-info">
-    <p>Username: <%= userInSession.username %></p>
+    <p>Username: <%= changes.username %></p>
     <br />
-    <p>Email: <%= userInSession.email %></p>
+    <p>Email: <%= changes.email %></p>
   </div>
-  <form action="/account/<%= user._id %>/delete" method="POST">
+  <form action="/account/<%= changes._id %>/delete" method="POST">
     <button class="accountButton" type="submit">Delete Account</button>
   </form>
-  <button type="submit" class="btn btn-primary" onclick="window.location.href='/account/<%= user._id %>/edit'">
+  <button
+    type="submit"
+    class="btn btn-primary"
+    onclick="window.location.href='/account/<%= changes._id %>/edit'"
+  >
     Update Account
   </button>
-  <% }) %>
 </div>

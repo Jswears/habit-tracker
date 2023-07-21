@@ -113,10 +113,10 @@ body {
   width: 500px;
   height: 52px;
   margin-bottom: 10px;
+  font-size: 16px;
 }
 
 #home .text-field {
-  background-color: lightgray;
   width: 500px;
   height: 52px;
   margin-bottom: 20px;
@@ -124,7 +124,6 @@ body {
 }
 
 #home .right label {
-  margin-left: 8px;
   margin-top: 10px;
   font-weight: bold;
   font-size: 16px;
@@ -178,6 +177,14 @@ body {
   letter-spacing: 0.1px;
 }
 
+#home .requirements-password {
+  width: 500px;
+  color: Dark Blue !important;
+  font-size: 10px !important;
+  line-height: 10px !important;
+  text-align: left !important;
+  font-weight: 800;
+}
 /* Login */
 #login-container {
   display: flex;
@@ -839,6 +846,15 @@ nav p {
     flex-wrap: wrap;
   }
 
+  .habit-item p,
+  .daily-item .daily-name,
+  .first-btn-delete {
+    margin-left: 10px;
+  }
+
+  .first-btn-edit {
+    margin-right: 10px;
+  }
   .habit-item,
   .daily-item,
   .todo-item {
@@ -908,7 +924,7 @@ nav p {
   .left .container button {
     max-width: 300px;
   }
-  .error-message {
+  .requirements-password {
     max-width: 300px;
   }
 }

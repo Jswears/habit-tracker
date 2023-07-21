@@ -196,7 +196,7 @@
         <% todoItems.forEach(item => { %>
         <div class="todo-item">
           <form action="/dashboard/todo/<%= item._id %>/delete" method="POST">
-            <button type="submit">
+            <button type="submit" class="first-btn-delete">
               <img
                 src="/images/967564a359c9dced95fb88c0ccb7cb02.png"
                 alt="delete-icon"
@@ -206,7 +206,7 @@
           </form>
           <p><%= item.name %></p>
           <form action="/dashboard/todo/<%= item._id %>/edit" method="GET">
-            <button type="submit">
+            <button type="submit" class="first-btn-edit">
               <img
                 src="/images/icons8-edit-24.png"
                 alt="edit-icon"

@@ -31,7 +31,8 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-/* POST */
+const defaultImagePath = "/images/user.png";
+
 router.post(
   "/",
   uploader.single("image"),
@@ -39,9 +40,11 @@ router.post(
   async (req, res, next) => {
     // Retrieve form data from request body
     const { username, email, password } = req.body;
-    
+
     const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
-    const image = req.file.path;
+
+    let image = req.file ? req.file.path : defaultImagePath;
+
     console.log("username");
 
     // Make sure users fill all mandatory fields:
@@ -64,14 +67,13 @@ router.post(
       const salt = await bcrypt.genSalt(saltRounds);
       const passwordHash = await bcrypt.hash(password, salt);
 
-      // Create a new user
+      // Create a new user with the default image if no file is uploaded
       const newUser = await User.create({
         username,
         email,
         passwordHash,
         image,
       });
-
       res.redirect("/auth/login");
     } catch (error) {
       if (error instanceof mongoose.Error.ValidationError) {
@@ -87,7 +89,6 @@ router.post(
     }
   }
 );
-
 //GET user profile
 router.get("/dashboard", isLoggedIn, async (req, res, next) => {
   try {
@@ -114,7 +115,7 @@ router.get("/dashboard", isLoggedIn, async (req, res, next) => {
 //GET account
 router.get("/account", isLoggedIn, async (req, res, next) => {
   const currentUser = req.session.currentUser;
-  const changes = await User.find({ _id: currentUser._id });
+  const changes = await User.findOne({ _id: currentUser._id });
 
   res.render("users/account", {
     userInSession: req.session.currentUser,
