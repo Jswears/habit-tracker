@@ -43,12 +43,15 @@
 
         <div class="habit-item">
           <p><%= habit.name %></p>
-          <a class="dropdown-trigger" href="#" data-target="dropdown1"
+          <a
+            class="dropdown-trigger"
+            href="#"
+            data-target="dropdown<%= habit._id %>"
             ><i class="material-icons">arrow_right</i></a
           >
 
           <!-- Dropdown Structure -->
-          <ul id="dropdown1" class="dropdown-content">
+          <ul id="dropdown<%= habit._id %>" class="dropdown-content">
             <li>
               <form
                 action="/dashboard/habits/<%= habit._id %>/delete"
